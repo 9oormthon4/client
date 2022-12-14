@@ -1,19 +1,23 @@
 import type { NextPage } from 'next';
 import { useEffect } from 'react';
 
-import styled from '@emotion/styled';
+import { Layout } from '@/components/common/Layout';
+import ProgressBar from '@/components/common/ProgressBar';
 
-type props = {
+type SurveyDetailProps = {
   id: number;
 };
 
-const SurveyDetail: NextPage<props> = ({ id }) => {
+const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
   useEffect(() => {
     document.title = '어드레감디 | 설문';
   }, []);
 
   return (
-    <div>설문페이지</div>
+    <Layout>
+      <ProgressBar id={id} />
+      <div>설문 {id}쪽</div>
+    </Layout>
   );
 };
 
