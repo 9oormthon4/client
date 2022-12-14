@@ -1,3 +1,1 @@
-import KakaoShare from './KaKaoShare';
-
-export default KakaoShare;
+export { default } from './KaKaoShare'
