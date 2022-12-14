@@ -1,17 +1,5 @@
 import styled from "@emotion/styled";
 
-export const Layout = styled.div`
-  // width: 390px;
-  // height: 844px;
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
-  // text-align: center
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;

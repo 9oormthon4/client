@@ -1,6 +1,7 @@
 import Button from "@/components/common/Button";
-import { Description, Layout, StatisticDescription, Title, Wrapper } from "./Home.styled";
+import { Description, StatisticDescription, Title, Wrapper } from "./Home.styled";
 import {useRouter} from 'next/router'
+import { Layout } from "@/components/common/Layout";
 
 const HomeLayout = () => {
   const router = useRouter();
