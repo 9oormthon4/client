@@ -1,3 +1,4 @@
+import KakaoShare from '@/components/common/KakaoShare'
 import Head from 'next/head'
 import Image from 'next/image'
 
@@ -11,7 +12,9 @@ export default function Home() {
       </Head>
 
       <main>
-        <div>메인페이지</div>
+        <div>메인페이지
+          <KakaoShare />
+        </div>
       </main>
 
       {/* <footer>
