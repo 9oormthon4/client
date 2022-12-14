@@ -20,13 +20,13 @@ interface GraphProps {
 
 export const Graph = styled.div<GraphProps>`
   position: relative;
-  z-index=0;
+  z-index: 0;
   width: ${(props) => {
     return (props.index / props.total) * 100;
   }}%;
   height: 10px;
-  background-color: #FF7B30;
-  border-radius: 10px;
+  // background-color: #FF7B30;
+  // border-radius: 10px;
 `;
 
 export const Img = styled.img<GraphProps>`
@@ -34,7 +34,5 @@ export const Img = styled.img<GraphProps>`
   height: 20px;
   position: absolute;
   z-index: 1;
-  left: ${(props) => {
-    return (props.index / props.total) * 100;
-  }}%;
+  right: -10px;
 `
