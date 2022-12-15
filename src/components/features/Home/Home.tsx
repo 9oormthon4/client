@@ -18,17 +18,16 @@ const HomeLayout = () => {
 
   const dispatch = useDispatch();
 
-  const {data: questions} = useQuery(['questionList'], getQuestions )
+  // const {data: questions} = useQuery(['questionList'], getQuestions )
+  
+  const { isLoading, data, isError, error } = useQuestionList();
+  
+  //  console.log(questions)
 
-  // const { isLoading, data, isError, error } = useQuestionList();
-
-
-   console.log(questions)
-
-  const handleQestionData = async () => {
-    // dispatch(questionActions.setQuestions(data?.data?.questions!));
-    // dispatch(questionActions.setTotalQuestionCount(data?.data?.totalQuestionCount!));
-  };
+  // const handleQestionData = async () => {
+  //   dispatch(questionActions.setQuestions(data?.data?.questions!));
+  //   dispatch(questionActions.setTotalQuestionCount(data?.data?.totalQuestionCount!));
+  // };
 
   const handleRequestId = async () => {
     getRequestId().then((result) => {
@@ -57,15 +56,19 @@ const HomeLayout = () => {
           <LogoImage src="/logo.gif" alt="어드레감디 로고 이미지" />
           <ButtonWrapper>
             <Button color={Color.white} backgroundColor={Color.green} onClick={() => {
-                handleQestionData().then(() => {
+                // handleQestionData().then(() => {
                   handleRequestId().then(()=>{
                     // console.log(questions)
-                  router.push('/survey/1');
+                    router.push('/survey/1');
+                    // router.push({
+                    //   pathname: '/survey/1',
+                    //   // query: { data: data ? data?.data?.questions : 'null' },
+                    // })
                 });
-              })
+              // })
             } }>출발하기</Button>
           </ButtonWrapper>
-          <StatisticDescription />
+          {/* <StatisticDescription /> */}
         </Wrapper>
       </Container>
     </Layout>

@@ -5,6 +5,8 @@ import { getQuestions } from '@/api/question';
 import { QuestionResponseType } from '@/types/question';
 import { ErrorMessageType } from '@/types/commonType';
 
+// const useQuestionList = () => useQuery('questionList', getQuestions())
+
 const useQuestionList = () => {
   const queryFn = () => getQuestions();
   const { isLoading, data, isError, error } = useQuery<

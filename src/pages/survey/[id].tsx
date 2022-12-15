@@ -11,6 +11,7 @@ import { answerActions } from '@/store/answer';
 import { useRouter } from 'next/router';
 import { Container } from '@/components/common/Layout/Layout';
 import Color from '@/components/common/Color';
+import useQuestionList from '@/hooks/useQuestionList';
 
 type SurveyDetailProps = {
   id: number;
@@ -26,11 +27,14 @@ const OptionHash = {
 const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
   const router = useRouter();
   
-  const data = useSelector((state) => state.questions);
+  // const data = useSelector((state) => state.questions);
+
+  const { isLoading, data, isError, error } = useQuestionList();
+  
 
   const requestId = useSelector((state) => state.requestId);
 
-  const totalQuestionCount = useSelector((state) => state.questions.totalQuestionCount)
+  // const totalQuestionCount = useSelector((state) => state.questions.totalQuestionCount)
 
   const dispatch = useDispatch();
 
@@ -42,8 +46,16 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
     document.title = '어드레감디 | 설문';
   }, []);
 
+  // useEffect(() => {
+  //   if(data.questions.length===0 || id>totalQuestionCount) {
+  //     router.push('/');
+  //   }
+  // }, []);
+
+  // console.log(data, '*****')
+
   const moveRouter = () => {
-    if(id < totalQuestionCount) {
+    if(id < data?.data.totalQuestionCount!) {
       router.push(`/survey/${Number(id) + 1}`);
     } else {
       // POST
@@ -51,21 +63,19 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
     }
   }
 
-  const divideWord = (word: string) => {
-    return word.split(/(<br\/>)|(\\n)|(<br>)/gi).map((v) => {`${<><p>ddddd</p><p>dsadf</p></>}`});
-  }
+console.log({data}, '.....', id, data?.data.totalQuestionCount!)
 
   return (
     <Layout>
       <Container>
         <Wrapper>
-          <ProgressBar id={id} total={totalQuestionCount} />
-          <QuestionType>Q{id}. {data.questions[id-1]?.questionContent}</QuestionType>
+          <ProgressBar id={id} total={data?.data.totalQuestionCount!} />
+          <QuestionType>Q{id}. {data?.data.questions[id-1]?.questionContent}</QuestionType>
           <TopMargin>
           </TopMargin>
           <ButtonWrapper>
             {
-              data.questions[id-1]?.optionOne.replace(/br/, '') === data.questions[id-1]?.optionOne ?
+              data?.data.questions[id-1]?.optionOne.replace(/br/, '') === data?.data.questions[id-1]?.optionOne ?
                <ButtonAnswer lineHeight={'27.54px'} backgroundColor={Color.orange} fontSize={'22px'} id={1} onClick={() => {
                 const curAnswerList = [...answers];
                 // curAnswerList[curAnswerList.length] = {
@@ -75,7 +85,7 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
                 // };
                 // dispatch(answerActions.setAnswer({responses: curAnswerList}));
                 moveRouter();
-              } }>{`${data.questions[id-1]?.optionOne}`}</ButtonAnswer>
+              } }>{`${data?.data.questions[id-1]?.optionOne}`}</ButtonAnswer>
               :
                <ButtonAnswer lineHeight={'21.91px'} backgroundColor={Color.orange} fontSize={'17.5px'} id={1} onClick={() => {
                 const curAnswerList = [...answers];
@@ -87,14 +97,14 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
                 // dispatch(answerActions.setAnswer({responses: curAnswerList}));
                 moveRouter();
               } }>
-                {data.questions[id-1]?.optionOne.split('<br>').map((item:any) => <p key={OptionHash.optionOne}>{item}</p>)}
+                {data?.data.questions[id-1]?.optionOne.split('<br>').map((item:any) => <p key={OptionHash.optionOne}>{item}</p>)}
                 </ButtonAnswer>
               }
           </ButtonWrapper>
           <ButtonWrapper>
 
               {
-              data.questions[id-1]?.optionTwo.replace(/br/, '') === data.questions[id-1]?.optionTwo ?
+              data?.data.questions[id-1]?.optionTwo.replace(/br/, '') === data?.data.questions[id-1]?.optionTwo ?
                <ButtonAnswer lineHeight={'21.91px'} backgroundColor={Color.orange} fontSize={'22px'} id={2} onClick={() => {
             const curAnswerList = [...answers];
             // curAnswerList[curAnswerList.length] = {
@@ -104,10 +114,10 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
             // };
             // dispatch(answerActions.setAnswer({responses: curAnswerList}));
             moveRouter();
-          }}>{`${data.questions[id-1]?.optionTwo}`}
+          }}>{`${data?.data.questions[id-1]?.optionTwo}`}
           </ButtonAnswer>
               :
-               <ButtonAnswer lineHeight={'27.54px'} backgroundColor={Color.orange} fontSize={'17.5px'} id={1} onClick={() => {
+               <ButtonAnswer lineHeight={'27.54px'} backgroundColor={Color.orange} fontSize={'17.5px'} id={2} onClick={() => {
                 const curAnswerList = [...answers];
                 // curAnswerList[curAnswerList.length] = {
                 //   "userId": requestId.userId,
@@ -117,7 +127,7 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
                 // dispatch(answerActions.setAnswer({responses: curAnswerList}));
                 moveRouter();
               } }>
-                {data.questions[id-1]?.optionTwo.split('<br>').map((item:any) => <p key={OptionHash.optionTwo}>{item}</p>)}
+                {data?.data.questions[id-1]?.optionTwo.split('<br>').map((item:any) => <p key={OptionHash.optionTwo}>{item}</p>)}
                 </ButtonAnswer>
               }
 
@@ -125,7 +135,7 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
           <ButtonWrapper>
 
               {
-              data.questions[id-1]?.optionThree.replace(/br/, '') === data.questions[id-1]?.optionThree ?
+              data?.data.questions[id-1]?.optionThree.replace(/br/, '') === data?.data.questions[id-1]?.optionThree ?
                <ButtonAnswer lineHeight={'27.54px'} backgroundColor={Color.orange} fontSize={'22px'} id={3} onClick={() => {
             const curAnswerList = [...answers];
             // curAnswerList[curAnswerList.length] = {
@@ -135,7 +145,7 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
             // };
             // dispatch(answerActions.setAnswer({responses: curAnswerList}));
             moveRouter();
-          }}>{data.questions[id-1]?.optionThree}</ButtonAnswer>
+          }}>{data?.data.questions[id-1]?.optionThree}</ButtonAnswer>
               :
                <ButtonAnswer lineHeight={'21.91px'} backgroundColor={Color.orange} fontSize={'17.5px'} id={3} onClick={() => {
             const curAnswerList = [...answers];
@@ -147,7 +157,7 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
             // dispatch(answerActions.setAnswer({responses: curAnswerList}));
             moveRouter();
           }}>
-            {data.questions[id-1]?.optionThree.split('<br>').map((item:any) => <p key={OptionHash.optionThree}>{item}</p>)}
+            {data?.data.questions[id-1]?.optionThree.split('<br>').map((item:any) => <p key={OptionHash.optionThree}>{item}</p>)}
             </ButtonAnswer>
               }
 
@@ -156,7 +166,7 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
           </ButtonWrapper>
 
               {
-              data.questions[id-1]?.optionFour.replace(/br/, '') === data.questions[id-1]?.optionFour ?
+              data?.data.questions[id-1]?.optionFour.replace(/br/, '') === data?.data.questions[id-1]?.optionFour ?
                <ButtonAnswer lineHeight={'27.54px'} backgroundColor={Color.orange} fontSize={'22px'} id={4} onClick={() => {
             const curAnswerList = [...answers];
             // curAnswerList[curAnswerList.length] = {
@@ -166,7 +176,7 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
             // };
             // dispatch(answerActions.setAnswer({responses: curAnswerList}));
             moveRouter();
-          }}>{data.questions[id-1]?.optionFour}</ButtonAnswer>
+          }}>{data?.data.questions[id-1]?.optionFour}</ButtonAnswer>
               :
                <ButtonAnswer lineHeight={'21.91px'} backgroundColor={Color.orange} fontSize={'17.5px'} id={4} onClick={() => {
             const curAnswerList = [...answers];
@@ -178,7 +188,7 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
             // dispatch(answerActions.setAnswer({responses: curAnswerList}));
             moveRouter();
           }}>
-            {data.questions[id-1]?.optionFour.split('<br>').map((item:any) => <p key={OptionHash.optionFour}>{item}</p>)}
+            {data?.data.questions[id-1]?.optionFour.split('<br>').map((item:any) => <p key={OptionHash.optionFour}>{item}</p>)}
             </ButtonAnswer>
               }
         </Wrapper>
