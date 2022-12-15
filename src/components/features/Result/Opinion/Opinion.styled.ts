@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
 
 export const OpinionList = styled.div`
   margin-top: 32px;
+  text-align: center;
 `
 
 export const OpinionText = styled.div`
