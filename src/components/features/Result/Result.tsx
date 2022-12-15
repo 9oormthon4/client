@@ -103,7 +103,7 @@ const handleCopyClipBoard = async (text: string) => {
         <Plant {...result} />
         <ButtonWrapper>
         {/* <Button onClick={shareButton}  backgroundColor={Color.orange} color={Color.white}>내 점수 자랑하기</Button> */}
-        <Button onClick={() => handleCopyClipBoard('https://adregamdy.vercel.app/')}  backgroundColor={Color.orange} color={Color.white}>내 점수 자랑하기</Button>
+        <Button onClick={shareButton}  backgroundColor={Color.orange} color={Color.white}>내 점수 자랑하기</Button>
         </ButtonWrapper>
         </>)
         
