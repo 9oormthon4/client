@@ -1,5 +1,5 @@
 import Button from "@/components/common/Button";
-import { ButtonWrapper, Description, LogoImage, Wrapper } from "./Home.styled";
+import { ButtonWrapper, Description, InfoDescription, LogoImage, Wrapper } from "./Home.styled";
 import {useRouter} from 'next/router'
 import { Layout } from "@/components/common/Layout";
 import useQuestionList from "@/hooks/useQuestionList";
@@ -69,6 +69,7 @@ const HomeLayout = () => {
             } }>출발하기</Button>
           </ButtonWrapper>
           <StatisticDescription />
+          <InfoDescription>여행일정을 입력하면 그린스코어와<br />환경보전비용을 계산해줘요</InfoDescription>
         </Wrapper>
       </Container>
     </Layout>

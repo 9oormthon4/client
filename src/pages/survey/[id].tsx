@@ -54,18 +54,18 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
 
   // console.log(data, '*****')
 
-  
-
   const moveRouter = () => {
     if(id < data?.data.totalQuestionCount!) {
       router.push(`/survey/${Number(id) + 1}`);
-    } else {
-      console.log('ans', answers)
-      postAnswer({responses: answers})
+    } 
+    if (answers.length === data?.data.totalQuestionCount!) {
+      postAnswer({responses: answers}).then(() => {
+        router.push('/result');
+      })
     }
   }
 
-  console.log({data}, '.....', id, data?.data.totalQuestionCount!)
+  // console.log({data}, '.....', id, data?.data.totalQuestionCount!)
 
   return (
     <Layout>
