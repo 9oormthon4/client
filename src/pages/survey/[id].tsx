@@ -157,7 +157,7 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
 
               {
               data.questions[id-1]?.optionFour.replace(/br/, '') === data.questions[id-1]?.optionFour ?
-               <ButtonAnswer lineHeight={'27.54px'} backgroundColor={Color.orange} fontSize={'22px'} id={3} onClick={() => {
+               <ButtonAnswer lineHeight={'27.54px'} backgroundColor={Color.orange} fontSize={'22px'} id={4} onClick={() => {
             const curAnswerList = [...answers];
             // curAnswerList[curAnswerList.length] = {
             //   "userId": requestId.userId,
@@ -168,7 +168,7 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
             moveRouter();
           }}>{data.questions[id-1]?.optionFour}</ButtonAnswer>
               :
-               <ButtonAnswer lineHeight={'21.91px'} backgroundColor={Color.orange} fontSize={'17.5px'} id={3} onClick={() => {
+               <ButtonAnswer lineHeight={'21.91px'} backgroundColor={Color.orange} fontSize={'17.5px'} id={4} onClick={() => {
             const curAnswerList = [...answers];
             // curAnswerList[curAnswerList.length] = {
             //   "userId": requestId.userId,
