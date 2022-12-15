@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import Cost from "./Cost";
 import Opinion from "./Opinion";
 import Plant from "./Plant";
-import { TopWrapper, Wrapper } from "./Result.styled";
+import { ButtonWrapper, TopWrapper, Wrapper } from "./Result.styled";
 import ScoreBoard from "./Score";
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
@@ -78,7 +78,9 @@ const Result = () => {
           {result ? <Opinion {...result} /> : <></>}
         </Wrapper>
         <Plant {...result} />
+        <ButtonWrapper>
         <Button onClick={onDownloadBtn}  backgroundColor={Color.orange} color={Color.white}>내 점수 자랑하기</Button>
+        </ButtonWrapper>
         </>)
         
         : <Loading />}

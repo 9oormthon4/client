@@ -13,3 +13,9 @@ export const Wrapper = styled.div`
 export const TopWrapper =  styled.div`
   padding-top: 88px;
 `
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
