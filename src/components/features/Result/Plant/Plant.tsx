@@ -20,15 +20,25 @@ const Plant = (result: ScoreResultType) => {
     getTotalPlantCount();
   }, [])
 
+  const putTree = () => {
+    console.log('dfasfdsadf')
+    return <TreeImg src="/tree.png" />
+  }
+
   return (
     <>
       {totalPlantCount >= 70 ? 
-      <Wrapper><Chip>제주도를 클릭해보세요</Chip><IslandImg src='/island.png' /><PlantTree count={totalPlantCount} /></Wrapper> 
+      <Wrapper><Chip>제주도를 클릭해보세요</Chip>
+
+      <IslandWrapper >
+        <IslandImg src='/island-full.jpeg' onClick={putTree}/>
+      </IslandWrapper>
+      <PlantTree count={totalPlantCount} /></Wrapper> 
       : 
       <>
-        {/* <Chip>다음기회에 만나요...</Chip> */}
+        <Chip>다음기회에 만나요...</Chip>
         <Wrapper>
-        <IslandImg src='/island.png' />
+        <IslandImg src='/island-full.jpeg' />
         <NotPlantTree count={totalPlantCount}/>
         </Wrapper></>}
     </>
@@ -51,6 +61,10 @@ const TreeImg = styled.img`
 
 const Wrapper = styled.div`
   background-color: ${Color.skyblue}
+`
+
+const IslandWrapper = styled.div`
+
 `
 
 export default Plant;

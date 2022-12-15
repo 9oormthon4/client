@@ -50,16 +50,39 @@ const Result = () => {
     getResult();
   }, [])
 
-    const onDownloadBtn = ()=>{
-        domtoimage
-        .toBlob(document.querySelector("#download") as HTMLElement)
-        .then((blob)=>{
-            // const saveConfirm = window.confirm("이미지를 저장하시겠습니까?")
-            // if(saveConfirm === true){
-            saveAs(blob, 'download.png');
-            // }
-        })
+  // const onDownloadBtn = ()=>{
+  //     domtoimage
+  //     .toBlob(document.querySelector("#download") as HTMLElement)
+  //     .then((blob)=>{
+  //         // const saveConfirm = window.confirm("이미지를 저장하시겠습니까?")
+  //         // if(saveConfirm === true){
+  //         saveAs(blob, 'download.png');
+  //         // }
+  //     })
+  // }
+
+const shareButton = () => {
+  window.Kakao.Link.sendDefault({
+    objectType: 'text',
+    text: '🍊어드레감디🍊',
+    link: {
+      webUrl: `https://adregamdy.vercel.app/`,
+      mobileWebUrl: `https://adregamdy.vercel.app/`,
+    },
+    serverCallbackArgs: {
+      key: userId, 
+    },
+  });
+}
+
+const handleCopyClipBoard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      alert('클립보드에 링크가 복사되었습니다.');
+    } catch (e) {
+      alert('복사에 실패하였습니다');
     }
+};
 
   return (
     <Layout>
@@ -79,7 +102,8 @@ const Result = () => {
         </Wrapper>
         <Plant {...result} />
         <ButtonWrapper>
-        <Button onClick={onDownloadBtn}  backgroundColor={Color.orange} color={Color.white}>내 점수 자랑하기</Button>
+        {/* <Button onClick={shareButton}  backgroundColor={Color.orange} color={Color.white}>내 점수 자랑하기</Button> */}
+        <Button onClick={() => handleCopyClipBoard('https://adregamdy.vercel.app/')}  backgroundColor={Color.orange} color={Color.white}>내 점수 자랑하기</Button>
         </ButtonWrapper>
         </>)
         
