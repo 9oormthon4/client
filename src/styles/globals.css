@@ -51,7 +51,7 @@ table {
 }
 
 @font-face {
-  font-family: 'Campton';
-  src: url('/fonts/Campton-BlackItalic.otf'); 
+  font-family: 'Campton-BlackItalic';
+  src: url('/public/font/Campton-BlackItalic.otf') format('opentype'); 
  }
  
