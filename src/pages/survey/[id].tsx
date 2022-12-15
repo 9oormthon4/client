@@ -216,7 +216,7 @@ const Wrapper = styled.div`
 
 const QuestionType = styled.div`
   // margin-top: 70px;
-  margin-top: 7vh;
+  margin-top: 6vh;
   font-weight: 700;
   font-size: 22px;
   color: ${Color.white};
