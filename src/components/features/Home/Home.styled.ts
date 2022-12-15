@@ -10,11 +10,13 @@ export const Wrapper = styled.div`
 `;
 
 export const ButtonWrapper = styled.div`
-  margin-top: 474px;
+  // margin-top: 474px;
+  margin-top: 60vh;
 `
 
 export const Description = styled.div`
-  margin-top: 115px;
+  // margin-top: 115px;
+  margin-top: 10vh;
   font-weight: 500;
   font-size: 18px;
   line-height: 22.54px;
@@ -22,7 +24,7 @@ export const Description = styled.div`
 `;
 
 export const LogoImage = styled.img`
-  width: 390px;
+  width: 420px;
   height: 363px;
   margin-top: 125px;
   position: absolute;

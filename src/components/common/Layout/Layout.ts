@@ -8,6 +8,6 @@ export const Layout = styled.div`
 `;
 
 export const Container = styled.div`
-  width: 390px;
+  width: 420px;
   height: 900px;
 `
