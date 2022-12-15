@@ -1,14 +1,17 @@
 import { useQuery } from '@tanstack/react-query';
 import { AxiosResponse, AxiosError } from 'axios';
-import { getQuestions } from '@/api/question';
 
-import { QuestionResponseType } from '@/types/question';
 import { ErrorMessageType } from '@/types/commonType';
+import { getParticipantCount } from '@/api/survey';
 
-const useQuestionList = () => {
-  const queryFn = () => getQuestions();
+interface ParticipantCountResponseType {
+  totalParticipantCount: number;
+}
+
+const useParticipantCount = () => {
+  const queryFn = () => getParticipantCount();
   const { isLoading, data, isError, error } = useQuery<
-    AxiosResponse<QuestionResponseType>,
+    AxiosResponse<ParticipantCountResponseType>,
     AxiosError<ErrorMessageType>
   >(['questionList',], queryFn, {
     refetchOnMount: false,
@@ -22,4 +25,4 @@ const useQuestionList = () => {
   };
 };
 
-export default useQuestionList;
+export default useParticipantCount;
