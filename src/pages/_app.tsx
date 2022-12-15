@@ -13,10 +13,12 @@ declare global {
 
 const queryClient = new QueryClient();
 
-const app = ({ Component, pageProps }: AppProps) => {
+const app = ({ Component, ...rest }: AppProps) => {
+  const {store, props} = wrapper.useWrappedStore(rest);
+
   return (
     <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
+        <Component {...props.pageProps} />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
