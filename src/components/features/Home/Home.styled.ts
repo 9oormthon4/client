@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 
 export const ButtonWrapper = styled.div`
   // margin-top: 474px;
-  margin-top: 60vh;
+  margin-top: 50vh;
 `
 
 export const Description = styled.div`

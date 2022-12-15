@@ -9,5 +9,6 @@ export const Layout = styled.div`
 
 export const Container = styled.div`
   width: 420px;
-  height: 900px;
+  // height: 900px;
+  height: 100vh;
 `
