@@ -6,7 +6,9 @@ const axiosConfig: AxiosRequestConfig = {
     'Content-Type': 'application/json;charset=UTF-8',
     'Access-Control-Allow-Origin': '*',
     'Accept': 'application/json',
-    "Access-Control-Allow-Credentials": true
+    "Access-Control-Allow-Credentials": true,
+    "id": "jeju",
+    "password": "pwd"
   },
 };
 
