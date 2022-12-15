@@ -11,9 +11,9 @@ declare global {
   }
 }
 
-const app = ({ Component, pageProps }: AppProps) => {
-  const queryClient = new QueryClient();
+const queryClient = new QueryClient();
 
+const app = ({ Component, pageProps }: AppProps) => {
   return (
     <QueryClientProvider client={queryClient}>
         <Component {...pageProps} />
