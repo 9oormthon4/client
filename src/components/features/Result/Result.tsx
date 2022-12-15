@@ -66,7 +66,7 @@ const shareButton = () => {
     objectType: 'text',
     text: '🍊어드레감디🍊',
     link: {
-      webUrl: `https://adregamdy.vercel.app/`,
+      webUrl: `https://adregamdy.vercel.app/result`,
       mobileWebUrl: `https://adregamdy.vercel.app/`,
     },
     serverCallbackArgs: {
