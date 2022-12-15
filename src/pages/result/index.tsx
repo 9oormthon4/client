@@ -1,14 +1,12 @@
-import { Layout } from "@/components/common/Layout";
+import Result from "@/components/features/Result";
 import { useEffect } from "react";
 
-const Result = () => {
+const ResultPage = () => {
   useEffect(() => {
     document.title = '결과 | 설문';
   }, []);
 
-  return (
-    <Layout>결과페이지</Layout>
-  );
+  return <Result />
 };
 
-export default Result;
+export default ResultPage;

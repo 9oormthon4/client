@@ -6,7 +6,8 @@ const Color = {
   black: '#2B2B2B',
   white: '#FFFFFF',
   orange2: '#F27400',
-  green2: '#356914'
+  green2: '#356914',
+  skyblue: '#94D6FF'
 }
 
 export default Color
