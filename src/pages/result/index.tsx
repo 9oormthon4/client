@@ -14,7 +14,7 @@ const ResultPage = () => {
   const getResult = () => {
   }
 
-  return <Result />
+  return <Result idd={0} />
 };
 
 export default ResultPage;

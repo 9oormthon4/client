@@ -35,15 +35,22 @@ export interface ScoreResultType {
   }
 }
 
-const Result = () => {
+interface ResultProps {
+  idd: number;
+}
+
+const Result: React.FC<ResultProps> = ({ idd }) => {
   const [result, setResult] = useState<ScoreResultType>();
 
   const userId = useSelector((state) => state.requestId.userId);
 
   const getResult = () => {
-    getScoreByUserId(userId).then((result) => {
+    if(idd === 0) {
+      getScoreByUserId(userId).then((result) => {
       setResult(result.data);
     })
+    }
+    
   }
 
   useEffect(() => {
@@ -66,7 +73,7 @@ const shareButton = () => {
     objectType: 'text',
     text: '🍊어드레감디🍊',
     link: {
-      webUrl: `https://adregamdy.vercel.app/result`,
+      webUrl: `https://adregamdy.vercel.app/${userId}`,
       mobileWebUrl: `https://adregamdy.vercel.app/`,
     },
     serverCallbackArgs: {
@@ -103,7 +110,7 @@ const handleCopyClipBoard = async (text: string) => {
         <Plant {...result} />
         <ButtonWrapper>
         {/* <Button onClick={shareButton}  backgroundColor={Color.orange} color={Color.white}>내 점수 자랑하기</Button> */}
-        <Button onClick={shareButton}  backgroundColor={Color.orange} color={Color.white}>내 점수 자랑하기</Button>
+       <Button onClick={() => handleCopyClipBoard('https://adregamdy.vercel.app/')} backgroundColor={Color.orange} color={Color.white}>내 점수 자랑하기</Button>
         </ButtonWrapper>
         </>)
         
