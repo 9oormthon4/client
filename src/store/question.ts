@@ -1,4 +1,4 @@
-import { Question } from '@/types/question';
+import { QuestionType } from '@/types/question';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { QuestionState } from '../types/reduxState';
@@ -12,7 +12,7 @@ const question = createSlice({
   name: 'questions',
   initialState,
   reducers: {
-    setQuestions(state, action: PayloadAction<Question[]>) {
+    setQuestions(state, action: PayloadAction<QuestionType[]>) {
       state.questions = action.payload;
       return state;
     },

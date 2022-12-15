@@ -6,9 +6,13 @@ import {
 } from 'react-redux';
 
 import question from './question';
+import requestId from './requestId';
+import answer from './answer';
 
 const rootReducer = combineReducers({
   questions: question.reducer,
+  requestId: requestId.reducer,
+  answer: answer.reducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

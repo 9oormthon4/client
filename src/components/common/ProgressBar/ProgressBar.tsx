@@ -1,16 +1,17 @@
 import {GraphDiv,GraphBack, Graph, Img } from './ProgressBar.styled';
 
 interface ProgressBarProps {
-  id: number
+  id: number;
+  total: number;
 }
 
-const ProgressBar: React.FC<ProgressBarProps> = ({id}) => {
+const ProgressBar: React.FC<ProgressBarProps> = ({id, total}) => {
 
   return (
     <GraphDiv>
       <GraphBack>
-        <Graph total={10} index={id}>
-          <Img src={'/round.png'} total={10} index={id} />
+        <Graph total={total} index={id}>
+          <Img src={'/round.png'} total={total} index={id} />
         </Graph>
       </GraphBack>
     </GraphDiv>

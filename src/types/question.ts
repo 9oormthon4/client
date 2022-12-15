@@ -1,9 +1,9 @@
-export interface QuestionResponse  {
-  "totalQuestionCount": 10,
-  "questions": Question[] 
+export interface QuestionResponseType  {
+  "totalQuestionCount": number,
+  "questions": QuestionType[] 
 }
 
-export interface Question {
+export interface QuestionType {
   "questionId": number,
   "questionContent": string,
   "questionImageUrl": string,

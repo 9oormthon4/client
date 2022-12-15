@@ -22,7 +22,9 @@ export const Graph = styled.div<GraphProps>`
   position: relative;
   z-index: 0;
   width: ${(props) => {
-    return (props.index / props.total) * 100;
+    if(props.index === props.total) return 100;
+    return 100 / (props.total - 1) * (props.index - 1);
+    // return (props.index / props.total) * 100;
   }}%;
   height: 10px;
   // background-color: #FF7B30;

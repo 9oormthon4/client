@@ -1,10 +1,8 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { Provider } from "react-redux";
 
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { useEffect } from 'react';
 import { wrapper } from '@/store';
 
 declare global {
