@@ -1,10 +1,12 @@
+import { ResponsesType } from "./response"
+
 export interface RequestIdType  {
   "userId": number,
   "userCode": string 
 }
 
 export interface AnswerResponseType  {
-  responses: AnswerType[]
+  responses: ResponsesType[]
 }
 
 export interface AnswerType {
