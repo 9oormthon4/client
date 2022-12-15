@@ -48,10 +48,9 @@ const HomeLayout = () => {
     <Layout>
       <Container>
         <Wrapper>
-          <Description>제주도 환경 오염 테스트</Description>
+          <Description>아름다운 제주의 환경을 보호하고<br />제주에 나무를 심어보세요!</Description>
           <Title>어드레감디</Title>
-          {/* <StatisticDescription>지금까지 ㅇㅇㅇ명이 나무를 심었어요!</StatisticDescription> */}
-          {/* <StatisticDescription /> */}
+          <StatisticDescription />
           <Button color={Color.white} backgroundColor={Color.green} onClick={() => {
             // handleRequestId().then(()=>{
             handleQestionData().then(() => {

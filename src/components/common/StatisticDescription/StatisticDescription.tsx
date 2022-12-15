@@ -5,7 +5,7 @@ const StatisticDescription = () => {
   const { isLoading, data, isError, error } = useParticipantCount();
 
   return (
-    <Layout>{!isLoading && data ? <>지금까지 {data}명이 나무를 심었어요!</> : <></>}</Layout>
+    <Layout>{!isLoading && data ? <>지금까지 {data?.data?.totalParticipantCount}명이 나무를 심었어요!</> : <></>}</Layout>
   )
 }
 

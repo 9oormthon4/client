@@ -14,6 +14,7 @@ export const Description = styled.div`
   font-weight: 500;
   font-size: 18px;
   line-height: 22.54px;
+  text-align: center;
 `;
 
 export const Title = styled.div`
