@@ -9,6 +9,10 @@ export const Wrapper = styled.div`
   background-color: ${Color.orange}
 `;
 
+export const ButtonWrapper = styled.div`
+  margin-top: 474px;
+`
+
 export const Description = styled.div`
   margin-top: 115px;
   font-weight: 500;
@@ -17,10 +21,11 @@ export const Description = styled.div`
   text-align: center;
 `;
 
-export const Title = styled.div`
-  margin-top: 75px;
-  font-weight: 400;
-  font-size: 38px;
+export const LogoImage = styled.img`
+  width: 390px;
+  height: 363px;
+  margin-top: 125px;
+  position: absolute;
 `
 
 // export const StatisticDescription = styled.div`
