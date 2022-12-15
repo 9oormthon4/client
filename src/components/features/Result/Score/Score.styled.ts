@@ -61,12 +61,17 @@ export const GreenScoreWrapper = styled.div`
 
 export const MyGreenScoreWrapper = styled.div`
   // vertical-align: middle;
+  padding-top: 16px;
 `
 
 export const GreenName = styled.div`
-
+  width: 42px;
+  text-align: center;
+  font-size: 18px;
 `
 
 export const FaceLine = styled.div`
-
+  display: flex;
+  align-items: center;
+  padding-bottom: 14px;
 `
