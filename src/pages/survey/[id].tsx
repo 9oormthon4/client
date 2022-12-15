@@ -53,7 +53,7 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
           <TopMargin>
           </TopMargin>
           <ButtonWrapper>
-            <ButtonAnswer backgroundColor={Color.green} fontSize={'23px'} id={1} onClick={() => {
+            <ButtonAnswer backgroundColor={Color.orange} fontSize={'23px'} id={1} onClick={() => {
             const curAnswerList = [...answers];
             // curAnswerList[curAnswerList.length] = {
             //   "userId": requestId.userId,
@@ -64,7 +64,7 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
             moveRouter();
           } }>{data.questions[id-1]?.optionOne}</ButtonAnswer></ButtonWrapper>
           <ButtonWrapper>
-            <ButtonAnswer backgroundColor={Color.green} fontSize={'23px'} id={2} onClick={() => {
+            <ButtonAnswer backgroundColor={Color.orange} fontSize={'23px'} id={2} onClick={() => {
             const curAnswerList = [...answers];
             // curAnswerList[curAnswerList.length] = {
             //   "userId": requestId.userId,
@@ -75,7 +75,7 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
             moveRouter();
           }}>{data.questions[id-1]?.optionTwo}</ButtonAnswer></ButtonWrapper>
           <ButtonWrapper>
-            <ButtonAnswer backgroundColor={Color.green} fontSize={'23px'} id={3} onClick={() => {
+            <ButtonAnswer backgroundColor={Color.orange} fontSize={'23px'} id={3} onClick={() => {
             const curAnswerList = [...answers];
             // curAnswerList[curAnswerList.length] = {
             //   "userId": requestId.userId,
@@ -85,7 +85,7 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
             // dispatch(answerActions.setAnswer({responses: curAnswerList}));
             moveRouter();
           }}>{data.questions[id-1]?.optionThree}</ButtonAnswer></ButtonWrapper>
-          <ButtonAnswer backgroundColor={Color.green} fontSize={'23px'} id={4} onClick={() => {
+          <ButtonAnswer backgroundColor={Color.orange} fontSize={'23px'} id={4} onClick={() => {
             const curAnswerList = [...answers];
             // curAnswerList[curAnswerList.length] = {
             //   "userId": requestId.userId,
@@ -111,7 +111,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${Color.orange}
+  background-color: ${Color.green}
 `;
 
 const QuestionType = styled.div`
