@@ -108,7 +108,7 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
 
               {
               data?.data.questions[id-1]?.optionTwo.replace(/br/, '') === data?.data.questions[id-1]?.optionTwo ?
-               <ButtonAnswer lineHeight={'21.91px'} backgroundColor={Color.orange} fontSize={'22px'} id={2} onClick={() => {
+               <ButtonAnswer lineHeight={'27.54px'} backgroundColor={Color.orange} fontSize={'22px'} id={2} onClick={() => {
             const curAnswerList = [...answers];
             curAnswerList[curAnswerList.length] = {
               "userId": requestId.userId,
@@ -120,7 +120,7 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
           }}>{`${data?.data.questions[id-1]?.optionTwo}`}
           </ButtonAnswer>
               :
-               <ButtonAnswer lineHeight={'27.54px'} backgroundColor={Color.orange} fontSize={'17.5px'} id={2} onClick={() => {
+               <ButtonAnswer lineHeight={'21.91px'} backgroundColor={Color.orange} fontSize={'17.5px'} id={2} onClick={() => {
                 const curAnswerList = [...answers];
                 curAnswerList[curAnswerList.length] = {
                   "userId": requestId.userId,
