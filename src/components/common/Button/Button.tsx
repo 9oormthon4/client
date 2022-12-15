@@ -2,14 +2,15 @@ import React, { ReactNode } from 'react';
 
 import {Layout} from './Button.styled';
 
-interface IProps {
+interface ButtonProps {
   children: ReactNode;
+  backgroundColor: string;
   onClick: () => void;
 }
 
-const Button: React.FC<IProps> = ({ children, onClick }) => (
+const Button: React.FC<ButtonProps> = ({ children, onClick, backgroundColor }) => (
   <Layout
-    backgroundColor='#2F8872'
+    backgroundColor={backgroundColor}
     color="white"
     hoverBackgroundColor="#2F8872"
     hoverColor="white"

@@ -6,13 +6,14 @@ interface ButtonProps {
   color: string;
   hoverBackgroundColor: string;
   hoverColor: string;
+  fontSize: string;
 }
 
 export const Layout = styled.div<ButtonProps>`
   width: 330px;
   height: 71px;
   font-weight: 500;
-  font-size: 23px;
+  font-size: ${({ fontSize }) => fontSize};
   color: ${({ color }) => color};
   background-color: ${({ backgroundColor }) => backgroundColor};
   cursor: pointer;
@@ -30,8 +31,23 @@ export const Layout = styled.div<ButtonProps>`
   // }
 
   &:active {
-    background-color: ${Color.green2};
+    background-color: ${Color.orange2};
     box-shadow: 0 0 0 3.5px ${Color.white} inset; 
     // transition: transform 0.3s;
   }
 `;
+
+export const Index = styled.div`
+  left: 66px;
+  height: 34px;
+  line-height: 23.79px;  
+  width: 34px;  
+  font-size: 19px;
+  font-weight: 500;
+  border-radius: 50%;
+  background-color: ${Color.white};
+  color: ${Color.black};
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+`
