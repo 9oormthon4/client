@@ -28,7 +28,7 @@ const StatisticDescription = () => {
 
   return (
     <Layout>
-      {totalParticipantCount!==0 ? <>지금까지 {totalParticipantCount}명이 나무를 심었어요!</> : <></>}
+      {totalParticipantCount!==0 ? <>지금까지 {totalParticipantCount.toLocaleString()}명이 나무를 심었어요!</> : <></>}
       
       {/* {data ? 
 
