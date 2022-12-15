@@ -11,7 +11,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({id, total}) => {
     <GraphDiv>
       <GraphBack>
         <Graph total={total} index={id}>
-          <Img src={'/round.png'} total={total} index={id} />
+          <Img src={'/car.png'} total={total} index={id} />
         </Graph>
       </GraphBack>
     </GraphDiv>

@@ -1,4 +1,4 @@
-import { getParticipantCount } from "@/api/survey";
+import { getInnerParticipantCount } from "@/api/survey";
 import useParticipantCount from "@/hooks/useParticipantCount";
 import { useEffect, useState } from "react";
 import { Layout } from "./StatisticDescription.styled"
@@ -11,8 +11,8 @@ const StatisticDescription = () => {
   const [totalParticipantCount, setTotalParticipantCount] = useState(0);
 
   const getTotalParticipantCount = () => {
-    getParticipantCount().then((result) => {
-      console.log(result.data.totalParticipantCount)
+    getInnerParticipantCount().then((result) => {
+      // console.log(result.data.totalParticipantCount)
       setTotalParticipantCount(result.data.totalParticipantCount);
     })
   }
@@ -22,7 +22,7 @@ const StatisticDescription = () => {
     // if (!isLoading && data ) {
     //   setTotalParticipantCount(data.)
     // }
-}, [])
+  }, [])
 
 // console.log(data?.data, totalParticipantCount)
 

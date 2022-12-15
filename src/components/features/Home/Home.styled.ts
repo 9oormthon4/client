@@ -29,9 +29,11 @@ export const LogoImage = styled.img`
   margin-top: 125px;
   position: absolute;
 `
-
-// export const StatisticDescription = styled.div`
-//   font-weight: 400;
-//   font-size: 15px;
-//   margin-bottom: 10px;
-// `
+export const InfoDescription = styled.div`
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17.53px;
+  color: ${Color.sub};
+  text-align: center;
+  margin-top: 3vh;
+`
