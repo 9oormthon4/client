@@ -1,5 +1,6 @@
 import { getPlantCount } from "@/api/survey";
 import Chip from "@/components/common/Chip";
+import Color from "@/components/common/Color";
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import { ScoreResultType } from "../Result";
@@ -21,8 +22,15 @@ const Plant = (result: ScoreResultType) => {
 
   return (
     <>
-  
-      {totalPlantCount >= 70 ? <><Chip>제주도를 클릭해보세요</Chip><IslandImg src='/island.png' /><PlantTree count={totalPlantCount} /></> : <NotPlantTree  count={totalPlantCount}/>}
+      {totalPlantCount >= 70 ? 
+      <Wrapper><Chip>제주도를 클릭해보세요</Chip><IslandImg src='/island.png' /><PlantTree count={totalPlantCount} /></Wrapper> 
+      : 
+      <>
+        {/* <Chip>다음기회에 만나요...</Chip> */}
+        <Wrapper>
+        <IslandImg src='/island.png' />
+        <NotPlantTree count={totalPlantCount}/>
+        </Wrapper></>}
     </>
   )
 }
@@ -41,6 +49,8 @@ const TreeImg = styled.img`
   // transform: translate(-50%, -50%);
 `
 
-
+const Wrapper = styled.div`
+  background-color: ${Color.skyblue}
+`
 
 export default Plant;
