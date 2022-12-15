@@ -9,6 +9,11 @@ import Opinion from "./Opinion";
 import Plant from "./Plant";
 import { TopWrapper, Wrapper } from "./Result.styled";
 import ScoreBoard from "./Score";
+import domtoimage from 'dom-to-image';
+import { saveAs } from 'file-saver';
+import ButtonAnswer from "@/components/common/ButtonAnswer";
+import Color from "@/components/common/Color";
+import Button from "@/components/common/Button";
 
 export interface ScoreResultType {
   "economicCost": number,
@@ -45,6 +50,17 @@ const Result = () => {
     getResult();
   }, [])
 
+    const onDownloadBtn = ()=>{
+        domtoimage
+        .toBlob(document.querySelector("#download") as HTMLElement)
+        .then((blob)=>{
+            // const saveConfirm = window.confirm("이미지를 저장하시겠습니까?")
+            // if(saveConfirm === true){
+            saveAs(blob, 'download.png');
+            // }
+        })
+    }
+
   return (
     <Layout>
       <Container>
@@ -62,6 +78,7 @@ const Result = () => {
           {result ? <Opinion {...result} /> : <></>}
         </Wrapper>
         <Plant {...result} />
+        <Button onClick={onDownloadBtn}  backgroundColor={Color.orange} color={Color.white}>내 점수 자랑하기</Button>
         </>)
         
         : <Loading />}
