@@ -68,7 +68,7 @@ const HomeLayout = () => {
               // })
             } }>출발하기</Button>
           </ButtonWrapper>
-          {/* <StatisticDescription /> */}
+          <StatisticDescription />
         </Wrapper>
       </Container>
     </Layout>
