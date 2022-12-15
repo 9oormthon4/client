@@ -1,9 +1,12 @@
 import { getScoreByUserId } from "@/api/survey";
 import { Container, Layout } from "@/components/common/Layout/Layout";
+import Loading from "@/components/common/Loading";
 import { useSelector } from "@/store";
 import { useEffect, useState } from "react";
 import Cost from "./Cost";
-import { Wrapper } from "./Result.styled";
+import Opinion from "./Opinion";
+import Plant from "./Plant";
+import { TopWrapper, Wrapper } from "./Result.styled";
 import ScoreBoard from "./Score";
 
 export interface ScoreResultType {
@@ -44,12 +47,24 @@ const Result = () => {
   return (
     <Layout>
       <Container>
+        {result ? 
+        
+        (<>
         <Wrapper>
+          <TopWrapper></TopWrapper>
           {result ? <ScoreBoard {...result} /> : <></>}
         </Wrapper>
         <Wrapper>
           {result ? <Cost {...result} /> : <></>}
         </Wrapper>
+        <Wrapper>
+          {result ? <Opinion {...result} /> : <></>}
+        </Wrapper>
+        <Plant {...result} />
+        </>)
+        
+        : <Loading />}
+        
       </Container>
     </Layout>
   );

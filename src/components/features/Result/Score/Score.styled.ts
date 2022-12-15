@@ -32,6 +32,11 @@ export const GreenScore = styled.div`
   position: absolute;
 `
 
+export const ScoreText = styled.div`
+  font-size: 18px;
+  position: absolute;
+`
+
 export const RankWrapper = styled.div`
   margin-top: 133px;
 `

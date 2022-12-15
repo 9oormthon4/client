@@ -1,12 +1,26 @@
 import Chip from "@/components/common/Chip";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ScoreResultType } from "../Result";
 import SmileFaceWrapper from "../SmileFaceWrapper";
-import { FaceLine, GreenName, GreenScore, GreenScoreWrapper, MyGreenScoreWrapper, MyRank, RankWrapper, ScoreWrapper, TotalRank, YourScoreWrapper } from "./Score.styled";
+import { FaceLine, GreenName, GreenScore, GreenScoreWrapper, MyGreenScoreWrapper, MyRank, RankWrapper, ScoreText, ScoreWrapper, TotalRank, YourScoreWrapper } from "./Score.styled";
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
+import { getInnerParticipantCount } from "@/api/survey";
 
 const ScoreBoard = (result: ScoreResultType) => {
+
+  const [totalParticipantCount, setTotalParticipantCount] = useState(0);
+
+  const getTotalParticipantCount = () => {
+    getInnerParticipantCount().then((result) => {
+      // console.log(result.data.totalParticipantCount)
+      setTotalParticipantCount(result.data.totalParticipantCount);
+    })
+  }
+
+  useEffect(() => {
+    getTotalParticipantCount();
+  }, [])
 
   const onDownloadBtn = ()=>{
         domtoimage
@@ -25,9 +39,10 @@ const ScoreBoard = (result: ScoreResultType) => {
       <YourScoreWrapper>
         <Chip>당신의 그린스코어는</Chip>
         <GreenScore>{result.greenScore}</GreenScore>
+        <ScoreText>점</ScoreText>
         <RankWrapper>
           <MyRank>{result.greenScoreRank}등 / </MyRank>
-          <TotalRank>372명 중</TotalRank>
+          <TotalRank>{totalParticipantCount !== 0 ? <>{totalParticipantCount}명 중</> : <></>}</TotalRank>
         </RankWrapper>
       </YourScoreWrapper>
       <GreenScoreWrapper>

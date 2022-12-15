@@ -50,6 +50,7 @@ export const getScoreByUserId = async (userId: number) => {
 }
 
 export const getPlantCount = async () => {
-  const response = await axios.get('/api/surveys-plant-count');
+  // const response = await axios.get('/api/surveys-plant-count');
+  const response = await axiosInstance.get('/surveys/plant-count');
   return response;
 }
