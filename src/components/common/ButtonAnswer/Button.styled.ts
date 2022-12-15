@@ -7,6 +7,11 @@ interface ButtonProps {
   hoverBackgroundColor: string;
   hoverColor: string;
   fontSize: string;
+  lineHeight: string;
+}
+
+interface lineHeightProps {
+  lineHeight: string;
 }
 
 export const Layout = styled.div<ButtonProps>`
@@ -23,6 +28,8 @@ export const Layout = styled.div<ButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  
 
   // &:hover {
   //   color: ${({ hoverColor }) => hoverColor};
@@ -38,7 +45,7 @@ export const Layout = styled.div<ButtonProps>`
 `;
 
 export const Index = styled.div`
-  left: 66px;
+  left: 36px;
   height: 34px;
   line-height: 23.79px;  
   width: 34px;  
@@ -50,4 +57,13 @@ export const Index = styled.div`
   display: grid;
   place-items: center;
   cursor: pointer;
+  position: absolute;
+`
+
+export const TextWrapper = styled.div<lineHeightProps>`
+  position: absolute;
+  cursor: pointer;
+  left: 95px;
+  text-align: start;
+  line-height: ${({ lineHeight }) => lineHeight};
 `

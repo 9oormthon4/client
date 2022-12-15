@@ -52,7 +52,7 @@ const HomeLayout = () => {
           <Title>어드레감디</Title>
           {/* <StatisticDescription>지금까지 ㅇㅇㅇ명이 나무를 심었어요!</StatisticDescription> */}
           {/* <StatisticDescription /> */}
-          <Button backgroundColor={Color.green} onClick={() => {
+          <Button color={Color.white} backgroundColor={Color.green} onClick={() => {
             // handleRequestId().then(()=>{
             handleQestionData().then(() => {
               router.push('/survey/1');

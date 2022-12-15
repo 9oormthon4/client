@@ -16,6 +16,13 @@ type SurveyDetailProps = {
   id: number;
 };
 
+const OptionHash = {
+  optionOne: 1,
+  optionTwo: 2,
+  optionThree: 3,
+  optionFour: 4
+}
+
 const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
   const router = useRouter();
   
@@ -44,6 +51,10 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
     }
   }
 
+  const divideWord = (word: string) => {
+    return word.split(/(<br\/>)|(\\n)|(<br>)/gi).map((v) => {`${<><p>ddddd</p><p>dsadf</p></>}`});
+  }
+
   return (
     <Layout>
       <Container>
@@ -53,18 +64,38 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
           <TopMargin>
           </TopMargin>
           <ButtonWrapper>
-            <ButtonAnswer backgroundColor={Color.orange} fontSize={'23px'} id={1} onClick={() => {
-            const curAnswerList = [...answers];
-            // curAnswerList[curAnswerList.length] = {
-            //   "userId": requestId.userId,
-            //   "questionId": id,
-            //   "answerToQuestion": 1
-            // };
-            // dispatch(answerActions.setAnswer({responses: curAnswerList}));
-            moveRouter();
-          } }>{data.questions[id-1]?.optionOne}</ButtonAnswer></ButtonWrapper>
+            {
+              data.questions[id-1]?.optionOne.replace(/br/, '') === data.questions[id-1]?.optionOne ?
+               <ButtonAnswer lineHeight={'27.54px'} backgroundColor={Color.orange} fontSize={'22px'} id={1} onClick={() => {
+                const curAnswerList = [...answers];
+                // curAnswerList[curAnswerList.length] = {
+                //   "userId": requestId.userId,
+                //   "questionId": id,
+                //   "answerToQuestion": 1
+                // };
+                // dispatch(answerActions.setAnswer({responses: curAnswerList}));
+                moveRouter();
+              } }>{`${data.questions[id-1]?.optionOne}`}</ButtonAnswer>
+              :
+               <ButtonAnswer lineHeight={'21.91px'} backgroundColor={Color.orange} fontSize={'17.5px'} id={1} onClick={() => {
+                const curAnswerList = [...answers];
+                // curAnswerList[curAnswerList.length] = {
+                //   "userId": requestId.userId,
+                //   "questionId": id,
+                //   "answerToQuestion": 1
+                // };
+                // dispatch(answerActions.setAnswer({responses: curAnswerList}));
+                moveRouter();
+              } }>
+                {data.questions[id-1]?.optionOne.split('<br>').map((item:any) => <p key={OptionHash.optionOne}>{item}</p>)}
+                </ButtonAnswer>
+              }
+          </ButtonWrapper>
           <ButtonWrapper>
-            <ButtonAnswer backgroundColor={Color.orange} fontSize={'23px'} id={2} onClick={() => {
+
+              {
+              data.questions[id-1]?.optionTwo.replace(/br/, '') === data.questions[id-1]?.optionTwo ?
+               <ButtonAnswer lineHeight={'21.91px'} backgroundColor={Color.orange} fontSize={'22px'} id={2} onClick={() => {
             const curAnswerList = [...answers];
             // curAnswerList[curAnswerList.length] = {
             //   "userId": requestId.userId,
@@ -73,9 +104,29 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
             // };
             // dispatch(answerActions.setAnswer({responses: curAnswerList}));
             moveRouter();
-          }}>{data.questions[id-1]?.optionTwo}</ButtonAnswer></ButtonWrapper>
+          }}>{`${data.questions[id-1]?.optionTwo}`}
+          </ButtonAnswer>
+              :
+               <ButtonAnswer lineHeight={'27.54px'} backgroundColor={Color.orange} fontSize={'17.5px'} id={1} onClick={() => {
+                const curAnswerList = [...answers];
+                // curAnswerList[curAnswerList.length] = {
+                //   "userId": requestId.userId,
+                //   "questionId": id,
+                //   "answerToQuestion": 1
+                // };
+                // dispatch(answerActions.setAnswer({responses: curAnswerList}));
+                moveRouter();
+              } }>
+                {data.questions[id-1]?.optionTwo.split('<br>').map((item:any) => <p key={OptionHash.optionTwo}>{item}</p>)}
+                </ButtonAnswer>
+              }
+
+            </ButtonWrapper>
           <ButtonWrapper>
-            <ButtonAnswer backgroundColor={Color.orange} fontSize={'23px'} id={3} onClick={() => {
+
+              {
+              data.questions[id-1]?.optionThree.replace(/br/, '') === data.questions[id-1]?.optionThree ?
+               <ButtonAnswer lineHeight={'27.54px'} backgroundColor={Color.orange} fontSize={'22px'} id={3} onClick={() => {
             const curAnswerList = [...answers];
             // curAnswerList[curAnswerList.length] = {
             //   "userId": requestId.userId,
@@ -84,17 +135,52 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
             // };
             // dispatch(answerActions.setAnswer({responses: curAnswerList}));
             moveRouter();
-          }}>{data.questions[id-1]?.optionThree}</ButtonAnswer></ButtonWrapper>
-          <ButtonAnswer backgroundColor={Color.orange} fontSize={'23px'} id={4} onClick={() => {
+          }}>{data.questions[id-1]?.optionThree}</ButtonAnswer>
+              :
+               <ButtonAnswer lineHeight={'21.91px'} backgroundColor={Color.orange} fontSize={'17.5px'} id={3} onClick={() => {
             const curAnswerList = [...answers];
             // curAnswerList[curAnswerList.length] = {
             //   "userId": requestId.userId,
             //   "questionId": id,
-            //   "answerToQuestion": 4
+            //   "answerToQuestion": 3
+            // };
+            // dispatch(answerActions.setAnswer({responses: curAnswerList}));
+            moveRouter();
+          }}>
+            {data.questions[id-1]?.optionThree.split('<br>').map((item:any) => <p key={OptionHash.optionThree}>{item}</p>)}
+            </ButtonAnswer>
+              }
+
+            
+          
+          </ButtonWrapper>
+
+              {
+              data.questions[id-1]?.optionFour.replace(/br/, '') === data.questions[id-1]?.optionFour ?
+               <ButtonAnswer lineHeight={'27.54px'} backgroundColor={Color.orange} fontSize={'22px'} id={3} onClick={() => {
+            const curAnswerList = [...answers];
+            // curAnswerList[curAnswerList.length] = {
+            //   "userId": requestId.userId,
+            //   "questionId": id,
+            //   "answerToQuestion": 3
             // };
             // dispatch(answerActions.setAnswer({responses: curAnswerList}));
             moveRouter();
           }}>{data.questions[id-1]?.optionFour}</ButtonAnswer>
+              :
+               <ButtonAnswer lineHeight={'21.91px'} backgroundColor={Color.orange} fontSize={'17.5px'} id={3} onClick={() => {
+            const curAnswerList = [...answers];
+            // curAnswerList[curAnswerList.length] = {
+            //   "userId": requestId.userId,
+            //   "questionId": id,
+            //   "answerToQuestion": 3
+            // };
+            // dispatch(answerActions.setAnswer({responses: curAnswerList}));
+            moveRouter();
+          }}>
+            {data.questions[id-1]?.optionFour.split('<br>').map((item:any) => <p key={OptionHash.optionFour}>{item}</p>)}
+            </ButtonAnswer>
+              }
         </Wrapper>
       </Container>
     </Layout>
@@ -118,6 +204,7 @@ const QuestionType = styled.div`
   margin-top: 70px;
   font-weight: 700;
   font-size: 22px;
+  color: ${Color.white};
   line-height: 27.54px;
 `
 
