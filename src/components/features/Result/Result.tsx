@@ -1,4 +1,5 @@
 import { getScoreByUserId } from "@/api/survey";
+import Chip from "@/components/common/Chip";
 import { Container, Layout } from "@/components/common/Layout/Layout";
 import Loading from "@/components/common/Loading";
 import { useSelector } from "@/store";

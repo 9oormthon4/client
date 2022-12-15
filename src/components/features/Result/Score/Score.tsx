@@ -45,8 +45,8 @@ const ScoreBoard = (result: ScoreResultType) => {
           <TotalRank>{totalParticipantCount !== 0 ? <>{totalParticipantCount}명 중</> : <></>}</TotalRank>
         </RankWrapper>
       </YourScoreWrapper>
-      <GreenScoreWrapper>
         <Chip>항목별 그린스코어는</Chip>
+      <GreenScoreWrapper>
         <MyGreenScoreWrapper>
           <FaceLine>
             <GreenName>하늘</GreenName>
@@ -62,7 +62,6 @@ const ScoreBoard = (result: ScoreResultType) => {
           </FaceLine>
         </MyGreenScoreWrapper>
       </GreenScoreWrapper>
-      
     </ScoreWrapper>
     <button onClick={onDownloadBtn}>저장하기</button>
     </>

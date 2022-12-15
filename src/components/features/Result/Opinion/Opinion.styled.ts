@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
 `
 
 export const OpinionList = styled.div`
-  margin-top: 32px;
+  // margin-top: 32px;
   text-align: center;
 `
 
@@ -14,4 +14,8 @@ export const OpinionText = styled.div`
   color: ${Color.sub};
   font-size: 16px;
   margin-bottom: 2px;
+`
+
+export const MarginTop = styled.div`
+  margin-top: 40px;
 `
