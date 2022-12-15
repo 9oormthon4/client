@@ -4,8 +4,9 @@ export const Layout = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  box-sizing: content-box;
-  display: block;
+  // box-sizing: content-box;
+  // display: block;
+  display: flex;
 `;
 
 export const Container = styled.div`
