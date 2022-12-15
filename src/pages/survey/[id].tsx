@@ -55,10 +55,12 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
   // console.log(data, '*****')
 
   const moveRouter = () => {
+    console.log(id, "여기는 진행중", answers)
     if(id < data?.data.totalQuestionCount!) {
       router.push(`/survey/${Number(id) + 1}`);
     } 
-    if (answers.length === data?.data.totalQuestionCount!) {
+    if (answers.length + 1 === data?.data.totalQuestionCount! ) {
+      console.log(id, "여기면 끝", answers)
       postAnswer({responses: answers}).then(() => {
         router.push('/result');
       })
