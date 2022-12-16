@@ -22,7 +22,7 @@ const Plant = (result: ScoreResultType) => {
     getTotalPlantCount();
   }, [])
 
-  const trees = [[50, 30], [50, 30], [50, 30], [50, 30], [50, 30], [50, 30], [50, 20], [50, 30],[50, 30], [50, 30], [50, 30], [50, 34], [50, 30], [50, 30], [51, 32], [50, 35], [57, 30], [50, 30], [50, 30], [50, 30], [50, 30], [50, 30], [59, 30], [50, 37], [59, 30], [53, 60], [50, 30], [50, 30], [50, 30], [51, 30], [50, 30], [50, 30]]
+  const trees = [[89, 55], [88, 45], [87, 50], [99, 54], [88, 55], [50, 30], [50, 20], [50, 30],[50, 30], [50, 30], [50, 30], [50, 34], [50, 30], [50, 30], [51, 32], [50, 35], [57, 30], [50, 30], [50, 30], [50, 30], [50, 30], [50, 30], [59, 30], [50, 37], [59, 30], [53, 60], [50, 30], [50, 30], [50, 30], [51, 30], [50, 30], [50, 30]]
 
 
   // const putTree = () => {
@@ -41,7 +41,17 @@ const Plant = (result: ScoreResultType) => {
   //   }
   // };
 
-  
+  const list = () => {
+    return trees.map((v, i) =>  <TreeImg src="/tree.png" display={treeView} top={(Math.random() * 65) + 25} left={(Math.random() * 240) + 60} key={i} height={42} width={42}/>)
+  }
+
+// top 25 90
+
+// (Math.random() * 65) + 25
+
+// right 60 300
+
+// (Math.random() * 240) + 60
 
   return (
     <>
@@ -49,10 +59,18 @@ const Plant = (result: ScoreResultType) => {
       <AllBackground>
         <NextTime><Chip>제주도를 클릭해보세요</Chip></NextTime>
       <Wrapper>
+       
       <IslandWrapper >
-        <GreenIslandImg src='/island.png' onClick={() => {setTreeView(treeView === 'none' ? 'block': 'block')}}></GreenIslandImg>
-        {/* {trees.forEach((v) =>  <TreeImg src="/tree.png" display={treeView} width={v[0]} height={v[1]} />)} */}
-        <TreeImg src="/tree.png" display={treeView} width={42} height={42} />
+        <GreenIslandImg src='/island.png' onClick={() => {setTreeView(treeView === 'none' ? 'block': 'block')}}>
+        </GreenIslandImg>
+
+           {/* <div> */}
+        {/* {list} */}
+        {/* {trees.map((v, i) =>  <TreeImg src="/tree.png" display={treeView} top={(Math.random() * 65) + 25} left={(Math.random() * 240) + 60} key={i} height={42} width={42}/>)} */}
+        {/* </div> */}
+        
+        <TreeImg src="/tree.png" display={treeView} width={42} height={42} left={(Math.random() * 240) + 60} top={(Math.random() * 65) + 15} />
+
        
       </IslandWrapper>
       {/* <PlantTree count={totalPlantCount} /> */}
@@ -110,8 +128,10 @@ const IslandImg = styled.img`
 
 interface styleTree {
   display: string;
-  width: number;
-  height: number;
+  left: number;
+  top: number;
+height: number;
+width: number;
 }
 
 const TreeImg = styled.img<styleTree>`
@@ -120,8 +140,8 @@ const TreeImg = styled.img<styleTree>`
   position: absolute;
   // top: 70px;
   // left: 160px;
-      top: 80%;
-    left: 50%;
+      top:${({ top }) => top};
+    left: ${({ left }) => left};
   display: ${({ display }) => display};
 `
 
@@ -130,7 +150,9 @@ const Wrapper = styled.div`
 `
 
 const IslandWrapper = styled.div`;
-
+  // position: relative;
+  display: flex;
+  justify-content: center;
 `
 
 const AllBackground = styled.div`
