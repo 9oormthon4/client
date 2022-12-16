@@ -69,10 +69,10 @@ const Plant = (result: ScoreResultType) => {
         {/* {trees.map((v, i) =>  <TreeImg src="/tree.png" display={treeView} top={(Math.random() * 65) + 25} right={(Math.random() * 240) + 60} key={i} height={42} width={42}/>)} */}
         {/* </div> */}
         
-        <TreeImg src="/tree.png" display={treeView} width={42} height={42} 
+        <TreeImg src="/tree.png" display={'block'} width={42} height={42} 
         right={`${(Math.random() * 240) + 60}`}
         top={`${(Math.random() * 65) + 15}`} />
-        <TreeImg2 src="/tree.png" display={treeView} width={42} height={42} 
+        <TreeImg2 src="/tree.png" display={'block'} width={42} height={42} 
         right={`${(Math.random() * 240) + 60}`} 
         top={`${(Math.random() * 65) + 15}`} />
         <TreeImg3 src="/tree.png" display={treeView} width={42} height={42} 
@@ -126,7 +126,6 @@ const GreenIslandImg= styled.img`
   height: 189px;
   cursor: pointer;
   position: relative;
-  left: 10%;
 `
 
 const IslandImg = styled.img`
