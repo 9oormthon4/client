@@ -14,6 +14,8 @@ import { saveAs } from 'file-saver';
 import ButtonAnswer from "@/components/common/ButtonAnswer";
 import Color from "@/components/common/Color";
 import Button from "@/components/common/Button";
+import Button2 from "@/components/common/Button2";
+import Button3 from "@/components/common/Button3";
 
 export interface ScoreResultType {
   "economicCost": number,
@@ -108,8 +110,8 @@ const handleCopyClipBoard = async (text: string) => {
         <Plant {...result} />
         <ButtonWrapper>
         {/* <Button onClick={shareButton}  backgroundColor={Color.orange} color={Color.white}>내 점수 자랑하기</Button> */}
-       <Button onClick={() => handleCopyClipBoard('https://adregamdy.vercel.app/')} backgroundColor={Color.orange} color={Color.white}>친구들과 같이하기</Button>
-       <Button onClick={onDownloadBtn} backgroundColor={Color.white} color={Color.orange}>다운</Button>
+       <Button3 onClick={() => handleCopyClipBoard('https://adregamdy.vercel.app/')} backgroundColor={Color.orange} color={Color.black}>친구들과 같이하기</Button3>
+       <Button2 onClick={onDownloadBtn} backgroundColor={Color.white} color={Color.orange} ><img src="/download.png" height="36px" width="36px"></img></Button2>
         </ButtonWrapper>
         </>)
         
