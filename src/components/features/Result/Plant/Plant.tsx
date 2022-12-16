@@ -10,6 +10,7 @@ import PlantTree from "./PlantTree";
 
 const Plant = (result: ScoreResultType) => {
   const [totalPlantCount, setTotalPlantCount] = useState(0);
+  const [treeView, setTreeView] = useState('none');
 
   const getTotalPlantCount = () => {
     getPlantCount().then((result) => {
@@ -29,14 +30,14 @@ const Plant = (result: ScoreResultType) => {
   let flag = false;
 
 
-  const display = () => {
-      console.log(flag)
-    if (!flag) {
-      return 'none';
-    } else {
-      return 'block';
-    }
-  };
+  // const display = () => {
+  //     console.log(flag)
+  //   if (!flag) {
+  //     return 'none';
+  //   } else {
+  //     return 'block';
+  //   }
+  // };
 
   
 
@@ -47,8 +48,8 @@ const Plant = (result: ScoreResultType) => {
         <NextTime><Chip>제주도를 클릭해보세요</Chip></NextTime>
       <Wrapper>
       <IslandWrapper >
-        <GreenIslandImg src='/island.png' onClick={() => {flag = true; console.log(flag)}}></GreenIslandImg>
-        <TreeImg src="/tree.png" display={display()} width={42} height={42} />
+        <GreenIslandImg src='/island.png' onClick={() => {setTreeView(treeView === 'none' ? 'block': 'none')}}></GreenIslandImg>
+        <TreeImg src="/tree.png" display={treeView} width={42} height={42} />
       </IslandWrapper>
       {/* <PlantTree count={totalPlantCount} /> */}
       </Wrapper> </AllBackground>
@@ -109,12 +110,12 @@ interface styleTree {
 }
 
 const TreeImg = styled.img<styleTree>`
-  width: 420px;
-  height: 420px;
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
   position: absolute;
-  top: 100px;
-  left: 300px;
-  display: ${(props) => props.display};
+  top: 1000px;
+  left: 500px;
+  display: ${({ display }) => display};
 `
 
 const Wrapper = styled.div`
