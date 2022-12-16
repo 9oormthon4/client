@@ -22,6 +22,8 @@ const Plant = (result: ScoreResultType) => {
     getTotalPlantCount();
   }, [])
 
+  const trees = [[50, 30], [50, 30], [50, 30], [50, 30], [50, 30], [50, 30], [50, 20], [50, 30],[50, 30], [50, 30], [50, 30], [50, 34], [50, 30], [50, 30], [51, 32], [50, 35], [57, 30], [50, 30], [50, 30], [50, 30], [50, 30], [50, 30], [59, 30], [50, 37], [59, 30], [53, 60], [50, 30], [50, 30], [50, 30], [51, 30], [50, 30], [50, 30]]
+
 
   // const putTree = () => {
   //   return <TreeImg src="/tree.png" />
@@ -49,7 +51,9 @@ const Plant = (result: ScoreResultType) => {
       <Wrapper>
       <IslandWrapper >
         <GreenIslandImg src='/island.png' onClick={() => {setTreeView(treeView === 'none' ? 'block': 'block')}}></GreenIslandImg>
+        {/* {trees.forEach((v) =>  <TreeImg src="/tree.png" display={treeView} width={v[0]} height={v[1]} />)} */}
         <TreeImg src="/tree.png" display={treeView} width={42} height={42} />
+       
       </IslandWrapper>
       {/* <PlantTree count={totalPlantCount} /> */}
       </Wrapper> </AllBackground>
@@ -114,8 +118,10 @@ const TreeImg = styled.img<styleTree>`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   position: absolute;
-  top: 70px;
-  left: 160px;
+  // top: 70px;
+  // left: 160px;
+      top: 80%;
+    left: 50%;
   display: ${({ display }) => display};
 `
 
