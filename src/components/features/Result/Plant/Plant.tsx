@@ -42,7 +42,7 @@ const Plant = (result: ScoreResultType) => {
   // };
 
   const list = () => {
-    return trees.map((v, i) =>  <TreeImg src="/tree.png" display={treeView} top={(Math.random() * 65) + 25} left={(Math.random() * 240) + 60} key={i} height={42} width={42}/>)
+    return trees.map((v, i) =>  <TreeImg src="/tree.png" display={treeView} top={`${(Math.random() * 65) + 25}`} right={`${(Math.random() * 240) + 60}`} key={i} height={42} width={42}/>)
   }
 
 // top 25 90
@@ -66,10 +66,18 @@ const Plant = (result: ScoreResultType) => {
 
            {/* <div> */}
         {/* {list} */}
-        {/* {trees.map((v, i) =>  <TreeImg src="/tree.png" display={treeView} top={(Math.random() * 65) + 25} left={(Math.random() * 240) + 60} key={i} height={42} width={42}/>)} */}
+        {/* {trees.map((v, i) =>  <TreeImg src="/tree.png" display={treeView} top={(Math.random() * 65) + 25} right={(Math.random() * 240) + 60} key={i} height={42} width={42}/>)} */}
         {/* </div> */}
         
-        <TreeImg src="/tree.png" display={treeView} width={42} height={42} left={(Math.random() * 240) + 60} top={(Math.random() * 65) + 15} />
+        <TreeImg src="/tree.png" display={treeView} width={42} height={42} 
+        right={`${(Math.random() * 240) + 60}`}
+        top={`${(Math.random() * 65) + 15}`} />
+        <TreeImg2 src="/tree.png" display={treeView} width={42} height={42} 
+        right={`${(Math.random() * 240) + 60}`} 
+        top={`${(Math.random() * 65) + 15}`} />
+        <TreeImg3 src="/tree.png" display={treeView} width={42} height={42} 
+        right={`${(Math.random() * 240) + 60} `}
+        top={`${(Math.random() * 65) + 15}`} />
 
        
       </IslandWrapper>
@@ -118,6 +126,7 @@ const GreenIslandImg= styled.img`
   height: 189px;
   cursor: pointer;
   position: relative;
+  left: 10%;
 `
 
 const IslandImg = styled.img`
@@ -128,8 +137,8 @@ const IslandImg = styled.img`
 
 interface styleTree {
   display: string;
-  left: number;
-  top: number;
+  right: string;
+  top: string;
 height: number;
 width: number;
 }
@@ -137,12 +146,31 @@ width: number;
 const TreeImg = styled.img<styleTree>`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
-  position: absolute;
-  // top: 70px;
-  // left: 160px;
-      top:${({ top }) => top};
-    left: ${({ left }) => left};
-  display: ${({ display }) => display};
+  position: relative;
+    top:${({ top }) => top}px;
+    right: ${({ right }) => right}px;
+  display: ${({ display }) => display}; // block
+  z-index: 3;
+`
+
+const TreeImg2 = styled.img<styleTree>`
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+  position: relative;
+    top:${({ top }) => top}px;
+    right: ${({ right }) => right}px;
+  display: ${({ display }) => display}; // block
+  z-index: 3;
+`
+
+const TreeImg3 = styled.img<styleTree>`
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
+  position: relative;
+    top:${({ top }) => top}px;
+    right: ${({ right }) => right}px;
+  display: ${({ display }) => display}; // block
+  z-index: 3;
 `
 
 const Wrapper = styled.div`
@@ -152,6 +180,7 @@ const Wrapper = styled.div`
 const IslandWrapper = styled.div`;
   // position: relative;
   display: flex;
+  width: 420px;
   justify-content: center;
 `
 
