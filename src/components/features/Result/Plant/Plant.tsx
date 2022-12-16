@@ -76,7 +76,7 @@ const Plant = (result: ScoreResultType) => {
         right={`${(Math.random() * 240) + 60}`} 
         top={`${(Math.random() * 65) + 15}`} />
         <TreeImg3 src="/tree.png" display={treeView} width={42} height={42} 
-        right={`${(Math.random() * 240) + 60} `}
+        right={`${(Math.random() * 240) + 60}`}
         top={`${(Math.random() * 65) + 15}`} />
 
        
