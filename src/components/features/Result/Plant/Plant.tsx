@@ -27,7 +27,7 @@ const Plant = (result: ScoreResultType) => {
   //   return <TreeImg src="/tree.png" />
   // }
 
-  let flag = false;
+  // let flag = false;
 
 
   // const display = () => {
@@ -78,7 +78,7 @@ const bounce = keyframes`
 //   90% {
 //     transform: translate3d(0,-4px,0);
 //   }
-0% { transform: translate(1px, 1px) rotate(0deg); }
+  0% { transform: translate(1px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -2px) rotate(-1deg); }
   20% { transform: translate(-3px, 0px) rotate(1deg); }
   30% { transform: translate(3px, 2px) rotate(0deg); }

@@ -10,7 +10,7 @@ export const GraphBack = styled.div`
   width: 330px;
   height: 10px;
   border-radius: 50px;
-  background-color: #faac69;
+  background-color: #FFFFFF;
 `;
 
 interface GraphProps {
@@ -22,19 +22,20 @@ export const Graph = styled.div<GraphProps>`
   position: relative;
   z-index: 0;
   width: ${(props) => {
-    if(props.index === props.total) return 100;
-    return 100 / (props.total - 1) * (props.index - 1);
-    // return (props.index / props.total) * 100;
+    // if(props.index === props.total) return 100;
+    // return 100 / (props.total - 1) * (props.index - 1);
+    return (props.index / props.total) * 100;
   }}%;
   height: 10px;
-  // background-color: #FF7B30;
-  // border-radius: 10px;
+  background-color: #2B2B2B;
+  border-radius: 10px;
 `;
 
 export const Img = styled.img<GraphProps>`
-  width: 20px;
-  height: 20px;
+  width: 39.94px;
+  height: 23.38px;
   position: absolute;
   z-index: 1;
   right: -10px;
+  top: -17px;
 `
