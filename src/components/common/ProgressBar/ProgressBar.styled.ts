@@ -3,7 +3,8 @@ import styled from "@emotion/styled";
 export const GraphDiv = styled.div`
   clear: both;
   // padding: 2vh;
-  margin-top: 78px;
+  // margin-top: 78px;
+  margin-top: 7vh;
 `;
 
 export const GraphBack = styled.div`
