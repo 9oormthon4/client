@@ -48,7 +48,7 @@ const Plant = (result: ScoreResultType) => {
         <NextTime><Chip>제주도를 클릭해보세요</Chip></NextTime>
       <Wrapper>
       <IslandWrapper >
-        <GreenIslandImg src='/island.png' onClick={() => {setTreeView(treeView === 'none' ? 'block': 'none')}}></GreenIslandImg>
+        <GreenIslandImg src='/island.png' onClick={() => {setTreeView(treeView === 'none' ? 'block': 'block')}}></GreenIslandImg>
         <TreeImg src="/tree.png" display={treeView} width={42} height={42} />
       </IslandWrapper>
       {/* <PlantTree count={totalPlantCount} /> */}
@@ -134,9 +134,9 @@ const AllBackground = styled.div`
 `
 
 const NextTime = styled.div`
-width: 200px;
-background-color: ${Color.skyblue};
-
+  width: 200px;
+  background-color: ${Color.skyblue};
+  margin-top: 30px;
 `
 
 
