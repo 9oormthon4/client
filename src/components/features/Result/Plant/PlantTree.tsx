@@ -7,7 +7,6 @@ interface PlantTreeProps {
 }
 
 const PlantTree: React.FC<PlantTreeProps> = ({count}) => {
-  console.log(count, 'pl')
   return <>
     {Array.from({length: count}).map((_, i) => {
 

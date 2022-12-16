@@ -39,19 +39,17 @@ interface ResultProps {
   idd: number;
 }
 
-const Result: React.FC<ResultProps> = ({ idd }) => {
+const Result: React.FC = () => {
   const [result, setResult] = useState<ScoreResultType>();
 
-  const userId = useSelector((state) => state.requestId.userId);
+  let userId = useSelector((state) => state.requestId.userId);
 
   const getResult = () => {
-    if(idd === 0) {
       getScoreByUserId(userId).then((result) => {
-      setResult(result.data);
-    })
+        setResult(result.data);
+      })
     }
     
-  }
 
   useEffect(() => {
     getResult();
