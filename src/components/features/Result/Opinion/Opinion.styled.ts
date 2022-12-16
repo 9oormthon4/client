@@ -13,7 +13,8 @@ export const OpinionList = styled.div`
 export const OpinionText = styled.div`
   color: ${Color.sub};
   font-size: 16px;
-  margin-bottom: 2px;
+  line-height: 20.03px;
+  font-weight: 500;
 `
 
 export const MarginTop = styled.div`
