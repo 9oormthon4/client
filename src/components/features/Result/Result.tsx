@@ -55,16 +55,16 @@ const Result: React.FC = () => {
     getResult();
   }, [])
 
-  // const onDownloadBtn = ()=>{
-  //     domtoimage
-  //     .toBlob(document.querySelector("#download") as HTMLElement)
-  //     .then((blob)=>{
-  //         // const saveConfirm = window.confirm("이미지를 저장하시겠습니까?")
-  //         // if(saveConfirm === true){
-  //         saveAs(blob, 'download.png');
-  //         // }
-  //     })
-  // }
+  const onDownloadBtn = ()=>{
+      domtoimage
+      .toBlob(document.querySelector("#download") as HTMLElement)
+      .then((blob)=>{
+          const saveConfirm = window.confirm("이미지를 저장하시겠습니까?")
+          if(saveConfirm === true){
+          saveAs(blob, 'download.png');
+          }
+      })
+  }
 
 const shareButton = () => {
   window.Kakao.Link.sendDefault({
@@ -108,7 +108,8 @@ const handleCopyClipBoard = async (text: string) => {
         <Plant {...result} />
         <ButtonWrapper>
         {/* <Button onClick={shareButton}  backgroundColor={Color.orange} color={Color.white}>내 점수 자랑하기</Button> */}
-       <Button onClick={() => handleCopyClipBoard('https://adregamdy.vercel.app/')} backgroundColor={Color.orange} color={Color.white}>내 점수 자랑하기</Button>
+       <Button onClick={() => handleCopyClipBoard('https://adregamdy.vercel.app/')} backgroundColor={Color.orange} color={Color.white}>친구들과 같이하기</Button>
+       <Button onClick={onDownloadBtn} backgroundColor={Color.white} color={Color.orange}>다운</Button>
         </ButtonWrapper>
         </>)
         
