@@ -95,6 +95,7 @@ const GreenIslandImg= styled.img`
   width: 330px;
   height: 189px;
   cursor: pointer;
+  position: relative;
 `
 
 const IslandImg = styled.img`
@@ -113,8 +114,8 @@ const TreeImg = styled.img<styleTree>`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   position: absolute;
-  top: 1000px;
-  left: 500px;
+  top: 70px;
+  left: 160px;
   display: ${({ display }) => display};
 `
 
