@@ -75,7 +75,8 @@ const SurveyDetail: NextPage<SurveyDetailProps> = ({ id }) => {
         <Wrapper>
           <ProgressBar id={id} total={data?.data.totalQuestionCount!} />
           <QuestionType>Q{id}. {data?.data.questions[id-1]?.questionContent}</QuestionType>
-          <QuestionImg src={`${data?.data.questions[id-1].questionImageUrl}`}  />
+          {/* <QuestionImg src={`${data?.data.questions[id-1].questionImageUrl}`}  /> */}
+          <QuestionImg src={`/images/${id}.png`}  />
           {/* <TopMargin>
           </TopMargin> */}
           <ButtonWrapper>
