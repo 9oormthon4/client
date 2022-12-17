@@ -3,7 +3,8 @@
 ### 실행 방법
 
 ```bash
-yarn storybook # 스토리북 실행
+yarn
+yarn dev
 ```
 
 
