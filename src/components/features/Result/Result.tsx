@@ -16,6 +16,7 @@ import Color from '@/components/common/Color';
 import Button from '@/components/common/Button';
 import Button2 from '@/components/common/Button2';
 import Button3 from '@/components/common/Button3';
+import ResultWord from './ResultWord';
 
 export interface ScoreResultType {
   'economicCost': number,
@@ -104,6 +105,9 @@ const Result: React.FC = () => {
             </Wrapper>
             <Wrapper>
               {result ? <Opinion {...result} /> : <></>}
+            </Wrapper>
+            <Wrapper>
+              {result ? <ResultWord isOver70={result.greenScore>=70} /> : <></>}
             </Wrapper>
             <Plant {...result} />
             <ButtonWrapper>
