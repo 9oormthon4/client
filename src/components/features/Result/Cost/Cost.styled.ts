@@ -8,6 +8,7 @@ export const CostText = styled.div`
   font-weight: 900;
   line-height: 87px;
   margin-top: 16px;
+  color: ${Color.orange2}
 `;
 
 export const Description = styled.div`
@@ -20,5 +21,15 @@ export const Description = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  padding-top: 48px;
+  padding-top: 115px;
 `;
+
+export const ScoreText = styled.div`
+  font-size: 18px;
+  position: absolute;
+  font-weight: 500;
+  line-height: 22.54px;
+  top: 790px;
+  left: 380px;
+`;
+
