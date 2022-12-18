@@ -1,5 +1,5 @@
 export interface ResponsesType {
-  "userId": number
-  "questionId": number
-  "answerToQuestion": number
+  'userId': number
+  'questionId': number
+  'answerToQuestion': number
 }

@@ -1,4 +1,4 @@
-import { getPlantCount } from "@/api/survey";
+import { getPlantCount } from '@/api/survey';
 
 export default async function handler(req: any, res: any) {
 

@@ -1,5 +1,5 @@
-import Color from "@/components/common/Color";
-import styled from "@emotion/styled";
+import Color from '@/components/common/Color';
+import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   height: 100%;
@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 export const ButtonWrapper = styled.div`
   // margin-top: 474px;
   margin-top: 50vh;
-`
+`;
 
 export const Description = styled.div`
   // margin-top: 115px;
@@ -28,7 +28,7 @@ export const LogoImage = styled.img`
   height: 363px;
   margin-top: 125px;
   position: absolute;
-`
+`;
 export const InfoDescription = styled.div`
   font-weight: 500;
   font-size: 14px;
@@ -36,4 +36,4 @@ export const InfoDescription = styled.div`
   color: ${Color.sub};
   text-align: center;
   margin-top: 3vh;
-`
+`;

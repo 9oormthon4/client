@@ -58,7 +58,7 @@ export const Index = styled.div`
   place-items: center;
   cursor: pointer;
   position: absolute;
-`
+`;
 
 export const TextWrapper = styled.div<lineHeightProps>`
   position: absolute;
@@ -66,4 +66,4 @@ export const TextWrapper = styled.div<lineHeightProps>`
   left: 95px;
   text-align: start;
   line-height: ${({ lineHeight }) => lineHeight};
-`
+`;

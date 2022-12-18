@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const GraphDiv = styled.div`
   clear: both;
@@ -23,8 +23,6 @@ export const Graph = styled.div<GraphProps>`
   position: relative;
   z-index: 0;
   width: ${(props) => {
-    // if(props.index === props.total) return 100;
-    // return 100 / (props.total - 1) * (props.index - 1);
     return (props.index / props.total) * 100;
   }}%;
   height: 10px;
@@ -39,4 +37,4 @@ export const Img = styled.img<GraphProps>`
   z-index: 1;
   right: -10px;
   top: -17px;
-`
+`;

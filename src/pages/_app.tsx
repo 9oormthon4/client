@@ -1,5 +1,5 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import '@/styles/globals.css';
+import type { AppProps } from 'next/app';
 
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -18,10 +18,10 @@ const app = ({ Component, ...rest }: AppProps) => {
 
   return (
     <QueryClientProvider client={queryClient}>
-        <Component {...props.pageProps} />
+      <Component {...props.pageProps} />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
-}
+};
 
 export default wrapper.withRedux(app);

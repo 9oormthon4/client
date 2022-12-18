@@ -1,4 +1,4 @@
-import { getParticipantCount } from "@/api/survey"
+import { getParticipantCount } from '@/api/survey';
 
 export default async function handler(req: any, res: any) {
 

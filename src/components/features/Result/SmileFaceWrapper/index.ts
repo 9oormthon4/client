@@ -1,1 +1,1 @@
-export { default } from './SmileFaceWrapper'
+export { default } from './SmileFaceWrapper';

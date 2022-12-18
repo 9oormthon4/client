@@ -9,8 +9,8 @@ const axiosConfig: AxiosRequestConfig = {
     // "Access-Control-Allow-Credentials": 'true',
     // 'Access-Control-Max-Age': 86400,
     // 'Access-Control-Allow-Methods': 'GET, POST, PATCH',
-    "id": "jeju",
-    "password": "pwd"
+    'id': 'jeju',
+    'password': 'pwd'
   },
 };
 

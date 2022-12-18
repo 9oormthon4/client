@@ -1,1 +1,1 @@
-export { default } from './Plant'
+export { default } from './Plant';

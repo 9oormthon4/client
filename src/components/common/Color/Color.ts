@@ -8,6 +8,6 @@ const Color = {
   orange2: '#F27400',
   green2: '#356914',
   skyblue: '#94D6FF'
-}
+};
 
-export default Color
+export default Color;

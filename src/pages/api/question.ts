@@ -1,4 +1,4 @@
-import { getInnerQuestions } from "@/api/question";
+import { getInnerQuestions } from '@/api/question';
 
 export default async function handler(req: any, res: any) {
 

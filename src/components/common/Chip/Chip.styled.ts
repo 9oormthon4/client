@@ -19,4 +19,4 @@ export const TextWrapper = styled.div`
   font-size: 16px;
   line-height: 20px;
   color: ${Color.white}
-`
+`;

@@ -1,17 +1,17 @@
-import Button from "@/components/common/Button";
-import { ButtonWrapper, Description, InfoDescription, LogoImage, Wrapper } from "./Home.styled";
-import {useRouter} from 'next/router'
-import { Layout } from "@/components/common/Layout";
-import useQuestionList from "@/hooks/useQuestionList";
-import { questionActions } from "@/store/question";
+import Button from '@/components/common/Button';
+import { ButtonWrapper, Description, InfoDescription, LogoImage, Wrapper } from './Home.styled';
+import {useRouter} from 'next/router';
+import { Layout } from '@/components/common/Layout';
+import useQuestionList from '@/hooks/useQuestionList';
+import { questionActions } from '@/store/question';
 import { useDispatch } from 'react-redux';
-import StatisticDescription from "@/components/common/StatisticDescription";
-import { requestIdActions } from "@/store/requestId";
-import { getRequestId } from "@/api/survey";
-import { Container } from "@/components/common/Layout/Layout";
-import Color from "@/components/common/Color";
-import { useQuery } from "@tanstack/react-query";
-import { getQuestions } from "@/api/question";
+import StatisticDescription from '@/components/common/StatisticDescription';
+import { requestIdActions } from '@/store/requestId';
+import { getRequestId } from '@/api/survey';
+import { Container } from '@/components/common/Layout/Layout';
+import Color from '@/components/common/Color';
+import { useQuery } from '@tanstack/react-query';
+import { getQuestions } from '@/api/question';
 
 const HomeLayout = () => {
   const router = useRouter();
@@ -19,9 +19,9 @@ const HomeLayout = () => {
   const dispatch = useDispatch();
 
   // const {data: questions} = useQuery(['questionList'], getQuestions )
-  
+
   const { isLoading, data, isError, error } = useQuestionList();
-  
+
   //  console.log(questions)
 
   // const handleQestionData = async () => {
@@ -33,19 +33,19 @@ const HomeLayout = () => {
     getRequestId().then((result) => {
       dispatch(requestIdActions.setUserId(result?.data?.userId!));
       dispatch(requestIdActions.setUserCode(result?.data?.userCode!));
-    })
-  }
+    });
+  };
 
   // const getRequestId = () => {
-    // getQuestions().then((data) => {
-    //   dispatch(questionActions.setQuestions(data?.data));
-    //   dispatch(questionActions.setTotalQuestionCount(data.data.));
-    // })
+  // getQuestions().then((data) => {
+  //   dispatch(questionActions.setQuestions(data?.data));
+  //   dispatch(questionActions.setTotalQuestionCount(data.data.));
+  // })
   // }
 
   // useEffect(() => {
-    // getData();
-    // console.log(isLoading, data)
+  // getData();
+  // console.log(isLoading, data)
   // }, [])
 
   return (
@@ -56,15 +56,15 @@ const HomeLayout = () => {
           <LogoImage src="/logo.gif" alt="어드레감디 로고 이미지" />
           <ButtonWrapper>
             <Button color={Color.white} backgroundColor={Color.green} onClick={() => {
-                // handleQestionData().then(() => {
-                  handleRequestId().then(()=>{
-                    // console.log(questions)
-                    router.push('/survey/1');
-                    // router.push({
-                    //   pathname: '/survey/1',
-                    //   // query: { data: data ? data?.data?.questions : 'null' },
-                    // })
-                });
+              // handleQestionData().then(() => {
+              handleRequestId().then(()=>{
+                // console.log(questions)
+                router.push('/survey/1');
+                // router.push({
+                //   pathname: '/survey/1',
+                //   // query: { data: data ? data?.data?.questions : 'null' },
+                // })
+              });
               // })
             } }>출발하기</Button>
           </ButtonWrapper>
@@ -73,7 +73,7 @@ const HomeLayout = () => {
         </Wrapper>
       </Container>
     </Layout>
-    )
-}
+  );
+};
 
 export default HomeLayout;

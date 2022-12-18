@@ -1,5 +1,5 @@
-import Color from "@/components/common/Color";
-import styled from "@emotion/styled";
+import Color from '@/components/common/Color';
+import styled from '@emotion/styled';
 
 export const CostText = styled.div`
   font-family: Campton;
@@ -8,7 +8,7 @@ export const CostText = styled.div`
   font-weight: 900;
   line-height: 87px;
   margin-top: 16px;
-`
+`;
 
 export const Description = styled.div`
   font-size: 14px;
@@ -17,8 +17,8 @@ export const Description = styled.div`
   text-align: center;
   color: ${Color.sub};
   margin-top: 8px;
-`
+`;
 
 export const Wrapper = styled.div`
   padding-top: 48px;
-`
+`;

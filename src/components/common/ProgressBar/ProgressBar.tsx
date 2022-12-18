@@ -15,7 +15,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({id, total}) => {
         </Graph>
       </GraphBack>
     </GraphDiv>
-  )
-}
+  );
+};
 
 export default ProgressBar;

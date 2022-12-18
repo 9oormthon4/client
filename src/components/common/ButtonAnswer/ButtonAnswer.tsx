@@ -21,8 +21,8 @@ const ButtonAnswer: React.FC<ButtonProps> = ({ children, onClick, backgroundColo
     fontSize={fontSize}
     lineHeight={lineHeight}
     onClick={onClick} >
-      <Index>{id}</Index>
-      <TextWrapper lineHeight={lineHeight}>{children}</TextWrapper>
+    <Index>{id}</Index>
+    <TextWrapper lineHeight={lineHeight}>{children}</TextWrapper>
   </Layout>
 );
 

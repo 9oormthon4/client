@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const Layout = styled.div`
   flex-direction: column;
@@ -13,4 +13,4 @@ export const Container = styled.div`
   width: 420px;
   // height: 900px;
   height: 100vh;
-`
+`;

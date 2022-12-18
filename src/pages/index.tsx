@@ -1,13 +1,13 @@
-import HomeLayout from '@/components/features/Home/Home'
+import HomeLayout from '@/components/features/Home/Home';
 import useQuestionList from '@/hooks/useQuestionList';
-import Head from 'next/head'
+import Head from 'next/head';
 import { useEffect } from 'react';
 
 export default function Home() {
 
   useEffect(() => {
     if (!window.Kakao.isInitialized()) {
-     window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_API_KEY);
+      window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_API_KEY);
     };
   }, []);
 
@@ -23,5 +23,5 @@ export default function Home() {
         <HomeLayout />
       </main>
     </>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import { getScoreByUserId } from "@/api/survey";
+import { getScoreByUserId } from '@/api/survey';
 
 export default async function handler(req: any, res: any) {
 

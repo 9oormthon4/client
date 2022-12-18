@@ -1,5 +1,5 @@
-import Color from "@/components/common/Color";
-import styled from "@emotion/styled";
+import Color from '@/components/common/Color';
+import styled from '@emotion/styled';
 
 export const ScoreWrapper = styled.div`
   height: 495px;
@@ -19,7 +19,7 @@ export const YourScoreWrapper = styled.div`
   padding-bottom: 53px;
   position: relative;
   text-align: center;
-`
+`;
 
 export const GreenScore = styled.div`
   font-family: 'Campton';
@@ -30,48 +30,47 @@ export const GreenScore = styled.div`
   letter-spacing: 0em;
   color: ${Color.white};
   position: absolute;
-`
+`;
 
 export const ScoreText = styled.div`
   font-size: 18px;
   position: absolute;
   top: 162px;
   left: 132px;
-`
+`;
 
 export const RankWrapper = styled.div`
   margin-top: 133px;
-`
+`;
 
 export const MyRank = styled.span`
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
-`
+`;
 
 export const TotalRank = styled.span`
   font-weight: 700;
   font-size: 18px;
   line-height: 22.54px;
-`
+`;
 
 export const GreenScoreWrapper = styled.div`
-
-`
+`;
 
 export const MyGreenScoreWrapper = styled.div`
   // vertical-align: middle;
   padding-top: 16px;
-`
+`;
 
 export const GreenName = styled.div`
   width: 42px;
   text-align: center;
   font-size: 18px;
-`
+`;
 
 export const FaceLine = styled.div`
   display: flex;
   align-items: center;
   padding-bottom: 14px;
-`
+`;

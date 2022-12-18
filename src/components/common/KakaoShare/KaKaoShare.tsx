@@ -7,7 +7,7 @@ const KakaoShare = () => {
     });
   };
 
-  return <button onClick={handleKakaoShare}>카카오톡 공유하기</button>
-}
+  return <button onClick={handleKakaoShare}>카카오톡 공유하기</button>;
+};
 
 export default KakaoShare;

@@ -1,4 +1,4 @@
-import { postInnerAnswer } from "@/api/survey";
+import { postInnerAnswer } from '@/api/survey';
 
 export default async function handler(req: any, res: any) {
 

@@ -14,7 +14,7 @@ const answer = createSlice({
   initialState,
   reducers: {
     setAnswer(state, action: PayloadAction<AnswerState>) {
-        (state.responses = action.payload.responses);
+      (state.responses = action.payload.responses);
       return state;
     },
     reset(state) {

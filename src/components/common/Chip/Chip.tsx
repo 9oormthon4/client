@@ -8,7 +8,7 @@ interface ChipProps {
 
 const Chip: React.FC<ChipProps> = ({ children }) => (
   <Layout>
-      <TextWrapper>{children}</TextWrapper>
+    <TextWrapper>{children}</TextWrapper>
   </Layout>
 );
 
