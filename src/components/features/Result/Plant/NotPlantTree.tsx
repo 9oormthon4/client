@@ -10,14 +10,11 @@ const getRandom = () => {
   return Math.floor(Math.random()*50);
 };
 
-
 const NotPlantTree: React.FC<PlantTreeProps> = ({count}) => {
   console.log(count);
   return <>
     {Array.from({length: count}).map((_, i) => {
-
       //  return <TreeImg src={'/tree.png'} key={i} top={getRandom()} left={getRandom()}/>
-
     })}
   </>;
 };

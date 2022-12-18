@@ -6,6 +6,7 @@ import { FaceLine, GreenName, GreenScore, GreenScoreWrapper, MyGreenScoreWrapper
 // import domtoimage from 'dom-to-image';
 // import { saveAs } from 'file-saver';
 import { getInnerParticipantCount } from '@/api/survey';
+import Color from '@/components/common/Color';
 
 const ScoreBoard = (result: ScoreResultType) => {
 
@@ -37,7 +38,7 @@ const ScoreBoard = (result: ScoreResultType) => {
     <>
       <ScoreWrapper id='download'>
         <YourScoreWrapper>
-          <Chip>당신의 그린스코어는</Chip>
+          <Chip backgroundColor={Color.black}>당신의 그린스코어는</Chip>
           <GreenScore>{result.greenScore}</GreenScore>
           <ScoreText>점</ScoreText>
           <RankWrapper>
@@ -45,7 +46,7 @@ const ScoreBoard = (result: ScoreResultType) => {
             <TotalRank>{totalParticipantCount !== 0 ? <>{totalParticipantCount}명 중</> : <></>}</TotalRank>
           </RankWrapper>
         </YourScoreWrapper>
-        <Chip>항목별 그린스코어는</Chip>
+        <Chip backgroundColor={Color.black}>항목별 그린스코어는</Chip>
         <GreenScoreWrapper>
           <MyGreenScoreWrapper>
             <FaceLine>

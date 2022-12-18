@@ -1,12 +1,16 @@
 import styled from '@emotion/styled';
 import Color from '../Color';
 
-export const Layout = styled.div`
+interface ChipProps {
+  backgroundColor: string;
+}
+
+export const Layout = styled.div<ChipProps>`
   // width: 170px;
   // height: 24px;
   left: 110px;
   top: 124px;
-  background: ${Color.black};
+  background: ${({ backgroundColor }) => backgroundColor};
   border-radius: 50px;
   padding: 2px 20px;
 `;

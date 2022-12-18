@@ -46,18 +46,15 @@ const Plant = (result: ScoreResultType) => {
   };
 
   // top 25 90
-
   // (Math.random() * 65) + 25
-
   // right 60 300
-
   // (Math.random() * 240) + 60
 
   return (
     <>
       {result.greenScore >= 70 ?
         <AllBackground>
-          <NextTime><Chip>제주도를 클릭해보세요</Chip></NextTime>
+          <NextTime><Chip backgroundColor={Color.green}>제주도를 클릭해보세요</Chip></NextTime>
           <Wrapper>
 
             <IslandWrapper >
@@ -86,7 +83,7 @@ const Plant = (result: ScoreResultType) => {
         :
         <AllBackground>
           <NextTime>
-            <Chip>다음기회에 만나요...</Chip></NextTime>
+            <Chip backgroundColor={Color.green}>다음기회에 만나요...</Chip></NextTime>
           <Wrapper>
             <IslandImg src='/frame.png' />
             <NotPlantTree count={totalPlantCount}/>
