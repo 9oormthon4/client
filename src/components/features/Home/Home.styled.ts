@@ -31,11 +31,10 @@ export const LogoImage = styled.img`
   position: absolute;
 `;
 export const InfoDescription = styled.div`
-  position: absolute;
   font-weight: 500;
   font-size: 14px;
   line-height: 17.53px;
   color: ${Color.sub};
   text-align: center;
-  margin-top: 670px;
+  margin-top: 3vh;
 `;
