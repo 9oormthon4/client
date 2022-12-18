@@ -21,6 +21,7 @@ export const Description = styled.div`
   font-size: 18px;
   line-height: 22.54px;
   text-align: center;
+  color: ${Color.black}
 `;
 
 export const LogoImage = styled.img`
