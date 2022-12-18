@@ -127,6 +127,7 @@ const GreenIslandImg= styled.img`
 `;
 
 const IslandImg = styled.img`
+  margin-top: 16px;
   width: 330px;
   height: 189px;
   animation: ${bounce} 1s ease infinite;
