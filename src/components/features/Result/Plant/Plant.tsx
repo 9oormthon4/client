@@ -123,6 +123,7 @@ const GreenIslandImg= styled.img`
   height: 189px;
   cursor: pointer;
   position: relative;
+  float: left; 
 `;
 
 const IslandImg = styled.img`
@@ -135,36 +136,37 @@ interface styleTree {
   display: string;
   right: string;
   top: string;
-height: number;
-width: number;
+  height: number;
+  width: number;
 }
 
 const TreeImg = styled.img<styleTree>`
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
+  width: ${({ width }) => width}px;
+  height: ${({ height }) => height}px;
   position: relative;
-    top:${({ top }) => top}px;
-    right: ${({ right }) => right}px;
+  top:${({ top }) => top}px;
+  right: ${({ right }) => right}px;
   display: ${({ display }) => display}; // block
   z-index: 3;
+  
 `;
 
 const TreeImg2 = styled.img<styleTree>`
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
+  width: ${({ width }) => width}px;
+  height: ${({ height }) => height}px;
   position: relative;
-    top:${({ top }) => top}px;
-    right: ${({ right }) => right}px;
+  top:${({ top }) => top}px;
+  right: ${({ right }) => right}px;
   display: ${({ display }) => display}; // block
   z-index: 3;
 `;
 
 const TreeImg3 = styled.img<styleTree>`
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
+  width: ${({ width }) => width}px;
+  height: ${({ height }) => height}px;
   position: relative;
-    top:${({ top }) => top}px;
-    right: ${({ right }) => right}px;
+  top:${({ top }) => top}px;
+  right: ${({ right }) => right}px;
   display: ${({ display }) => display}; // block
   z-index: 3;
 `;
@@ -182,15 +184,15 @@ const IslandWrapper = styled.div`;
 
 const AllBackground = styled.div`
   background-color: ${Color.skyblue};
-      display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const NextTime = styled.div`
   width: 200px;
   background-color: ${Color.skyblue};
-  margin-top: 30px;
+  margin-top: 58px;
 `;
 
 export default Plant;

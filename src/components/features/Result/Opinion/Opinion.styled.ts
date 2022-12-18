@@ -2,7 +2,7 @@ import Color from '@/components/common/Color';
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  padding-top: 32px;
+  padding-top: 36px;
 `;
 
 export const OpinionList = styled.div`
@@ -18,5 +18,5 @@ export const OpinionText = styled.div`
 `;
 
 export const MarginTop = styled.div`
-  margin-top: 40px;
+  margin-top: 97px;
 `;
