@@ -5,8 +5,8 @@ export const Layout = styled.div`
   align-items: center;
   width: 100%;
   // box-sizing: content-box;
-  // display: block;
-  display: flex;
+  display: block;
+  // display: flex;
 `;
 
 export const Container = styled.div`
