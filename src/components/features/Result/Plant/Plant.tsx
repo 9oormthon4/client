@@ -79,15 +79,18 @@ const Plant = (result: ScoreResultType) => {
 
             </IslandWrapper>
             {/* <PlantTree count={totalPlantCount} /> */}
-          </Wrapper> </AllBackground>
+          </Wrapper>
+        </AllBackground>
         :
         <AllBackground>
           <NextTime>
-            <Chip backgroundColor={Color.green}>다음기회에 만나요...</Chip></NextTime>
+            <Chip backgroundColor={Color.green}>다음기회에 만나요...</Chip>
+          </NextTime>
           <Wrapper>
             <IslandImg src='/frame.png' />
             <NotPlantTree count={totalPlantCount}/>
-          </Wrapper></AllBackground>}
+          </Wrapper>
+        </AllBackground>}
     </>
   );
 };
@@ -122,7 +125,7 @@ const GreenIslandImg= styled.img`
   width: 330px;
   height: 189px;
   cursor: pointer;
-  position: relative;
+  position: absolute;
   float: left; 
 `;
 
@@ -144,7 +147,7 @@ interface styleTree {
 const TreeImg = styled.img<styleTree>`
   width: ${({ width }) => width}px;
   height: ${({ height }) => height}px;
-  position: relative;
+  position: absolute;
   top:${({ top }) => top}px;
   right: ${({ right }) => right}px;
   display: ${({ display }) => display}; // block
@@ -155,7 +158,7 @@ const TreeImg = styled.img<styleTree>`
 const TreeImg2 = styled.img<styleTree>`
   width: ${({ width }) => width}px;
   height: ${({ height }) => height}px;
-  position: relative;
+  position: absolute;
   top:${({ top }) => top}px;
   right: ${({ right }) => right}px;
   display: ${({ display }) => display}; // block
@@ -165,7 +168,7 @@ const TreeImg2 = styled.img<styleTree>`
 const TreeImg3 = styled.img<styleTree>`
   width: ${({ width }) => width}px;
   height: ${({ height }) => height}px;
-  position: relative;
+  position: absolute;
   top:${({ top }) => top}px;
   right: ${({ right }) => right}px;
   display: ${({ display }) => display}; // block
@@ -177,10 +180,11 @@ const Wrapper = styled.div`
 `;
 
 const IslandWrapper = styled.div`;
-  // position: relative;
+  position: relative;
   display: flex;
   width: 420px;
   justify-content: center;
+  margin-top: 8px;
 `;
 
 const AllBackground = styled.div`
