@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+
+
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 
 html, body, div, span, applet, object, iframe,
@@ -50,8 +52,8 @@ table {
 	border-spacing: 0;
 }
 
+
 @font-face {
   font-family: 'Campton-BlackItalic';
-  src: url('/public/font/Campton-BlackItalic.otf') format('opentype'); 
- }
- 
+  src: url('../../public/font/Campton-BlackItalic.otf') format('opentype'); 
+}
