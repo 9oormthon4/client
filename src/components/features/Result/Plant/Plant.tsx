@@ -11,6 +11,7 @@ import PlantTree from './PlantTree';
 const Plant = (result: ScoreResultType) => {
   const [totalPlantCount, setTotalPlantCount] = useState(0);
   const [treeView, setTreeView] = useState('none');
+  const [trees, setTrees] = useState([<></>]);
 
   const getTotalPlantCount = () => {
     getPlantCount().then((result) => {
@@ -20,10 +21,8 @@ const Plant = (result: ScoreResultType) => {
 
   useEffect(() => {
     getTotalPlantCount();
-  }, []);
-
-  const trees = [[89, 55], [88, 45], [87, 50], [99, 54], [88, 55], [50, 30], [50, 20], [50, 30],[50, 30], [50, 30], [50, 30], [50, 34], [50, 30], [50, 30], [51, 32], [50, 35], [57, 30], [50, 30], [50, 30], [50, 30], [50, 30], [50, 30], [59, 30], [50, 37], [59, 30], [53, 60], [50, 30], [50, 30], [50, 30], [51, 30], [50, 30], [50, 30]];
-
+    // console.log(totalPlantCount);
+  }, [totalPlantCount]);
 
   // const putTree = () => {
   //   return <TreeImg src="/tree.png" />
@@ -41,9 +40,21 @@ const Plant = (result: ScoreResultType) => {
   //   }
   // };
 
-  const list = () => {
-    return trees.map((v, i) => <TreeImg src="/tree.png" display={treeView} top={`${(Math.random() * 65) + 25}`} right={`${(Math.random() * 240) + 60}`} key={i} height={42} width={42}/>);
+  useEffect(() => {
+    const forest = makeForest();
+    setTrees(forest);
+  }, [totalPlantCount]);
+
+  const makeForest = () => {
+    const trees = [];
+    for(let i=0; i<totalPlantCount; i++) {
+      // trees.push(<TreeImg src="/tree.png" display={treeView} top={`${(Math.random() * 65) + 25}`} right={`${(Math.random() * 240) + 60}`} key={i} height={42} width={42}/>);
+      trees.push(<TreeImg src="/tree.png" display={'block'} top={`${(Math.random() * 65) + 25}`} right={`${(Math.random() * 240) + 60}`} key={i} height={42} width={42}/>);
+    }
+    return trees;
   };
+
+  const makeTree = () => <TreeImg src="/tree.png" display={treeView} top={`${(Math.random() * 65) + 25}`} right={`${(Math.random() * 240) + 60}`} key={'tree'} height={42} width={42}/>;
 
   // top 25 90
   // (Math.random() * 65) + 25
@@ -54,19 +65,23 @@ const Plant = (result: ScoreResultType) => {
     <>
       {result.greenScore >= 70 ?
         <AllBackground>
-          <NextTime><Chip backgroundColor={Color.green}>제주도를 클릭해보세요</Chip></NextTime>
+          <NextTime>
+            <Chip backgroundColor={Color.green}>제주도를 클릭해보세요</Chip>
+          </NextTime>
           <Wrapper>
 
-            <IslandWrapper >
-              <GreenIslandImg src='/island.png' onClick={() => {setTreeView(treeView === 'none' ? 'block': 'block');}}>
+            <IslandWrapper
+              onClick={() => {setTreeView(treeView === 'none' ?'block':'block');}}
+            >
+              <GreenIslandImg src='/island.png'>
               </GreenIslandImg>
 
-              {/* <div> */}
-              {/* {list} */}
-              {/* {trees.map((v, i) =>  <TreeImg src="/tree.png" display={treeView} top={(Math.random() * 65) + 25} right={(Math.random() * 240) + 60} key={i} height={42} width={42}/>)} */}
-              {/* </div> */}
+              {/* {makeForest()} */}
 
-              <TreeImg src="/tree.png" display={'block'} width={42} height={42}
+              {makeTree()}
+              {trees}
+
+              {/* <TreeImg src="/tree.png" display={'block'} width={42} height={42}
                 right={`${(Math.random() * 240) + 60}`}
                 top={`${(Math.random() * 65) + 15}`} />
               <TreeImg2 src="/tree.png" display={'block'} width={42} height={42}
@@ -74,8 +89,7 @@ const Plant = (result: ScoreResultType) => {
                 top={`${(Math.random() * 65) + 15}`} />
               <TreeImg3 src="/tree.png" display={treeView} width={42} height={42}
                 right={`${(Math.random() * 240) + 60}`}
-                top={`${(Math.random() * 65) + 15}`} />
-
+                top={`${(Math.random() * 65) + 15}`} /> */}
 
             </IslandWrapper>
             {/* <PlantTree count={totalPlantCount} /> */}
@@ -96,18 +110,6 @@ const Plant = (result: ScoreResultType) => {
 };
 
 const bounce = keyframes`
-// from, 20%, 53%, 80%, to {
-//     transform: translate3d(0,0,0);
-//   }
-//   40%, 43% {
-//     transform: translate3d(0, -30px, 0);
-//   }
-//   70% {
-//     transform: translate3d(0, -15px, 0);
-//   }
-//   90% {
-//     transform: translate3d(0,-4px,0);
-//   }
   0% { transform: translate(1px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -2px) rotate(-1deg); }
   20% { transform: translate(-3px, 0px) rotate(1deg); }
@@ -152,20 +154,9 @@ const TreeImg = styled.img<styleTree>`
   right: ${({ right }) => right}px;
   display: ${({ display }) => display}; // block
   z-index: 3;
-  
 `;
 
 const TreeImg2 = styled.img<styleTree>`
-  width: ${({ width }) => width}px;
-  height: ${({ height }) => height}px;
-  position: absolute;
-  top:${({ top }) => top}px;
-  right: ${({ right }) => right}px;
-  display: ${({ display }) => display}; // block
-  z-index: 3;
-`;
-
-const TreeImg3 = styled.img<styleTree>`
   width: ${({ width }) => width}px;
   height: ${({ height }) => height}px;
   position: absolute;
