@@ -16,7 +16,9 @@ export default function Home() {
       <Head>
         <title>어드레감디</title>
         <meta name="description" content="당신의 여행이 제주를 아프지 않게 만들도록" />
-        <link rel="icon" href="logo.png" />
+        <link rel="icon" href="/images/logo.png" />
+        <link rel="shortcut icon" href="/public/logo.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.png"/>
       </Head>
 
       <main>

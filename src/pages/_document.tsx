@@ -6,7 +6,7 @@ const META_DATA = {
   title: '어드레감디',
   description: '여행일정 입력하고 제주 지켜주기',
   author: '어드레감디',
-  image: 'logo.png',
+  image: '/images/logo.png',
 };
 
 export default function Document() {
