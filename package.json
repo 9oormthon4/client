@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "lint": "next lint"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -29,7 +27,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
-    "@storybook/addon-actions": "^6.5.14",
     "@types/dom-to-image": "^2.6.4",
     "@types/file-saver": "^2.0.5",
     "@types/node": "18.11.15",
